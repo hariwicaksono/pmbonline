@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
 
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PMB AKN Nganjuk</title>
+    <title><?php echo $site_name." - ".$site_title;?></title>
 
 	<link rel="stylesheet" href="<?= base_url('assets/css/datepicker/bootstrap-datepicker3.css')  ?>"/>
     <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">

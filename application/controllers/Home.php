@@ -10,13 +10,18 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+        $site_info = $this->db->get('pengaturan', 1)->row();
+        $data['site_name'] = $site_info->site_name;
+        $data['site_title'] = $site_info->site_title;
+        $data['site_logo'] = $site_info->site_logo_header;
+        $data['site_favicon'] = $site_info->site_favicon;
         $kode_thak=$this->model_app->kode_thak_aktif();
-        $d['informasi']=$this->model_app->get_all_info($kode_thak);
-        $d['thak']=$this->model_admin->ambil_thak_aktif();
-        $d['prodi']=$this->model_app->get_prodi();
-        $d['cek_reg']=$this->model_cek->cek_reg();
-        $d['jadwal_tes']=$this->model_admin->get_all_tes($kode_thak);
-		$this->load->view('home',$d);
+        $data['informasi']=$this->model_app->get_all_info($kode_thak);
+        $data['thak']=$this->model_admin->ambil_thak_aktif();
+        $data['prodi']=$this->model_app->get_prodi();
+        $data['cek_reg']=$this->model_cek->cek_reg();
+        $data['jadwal_tes']=$this->model_admin->get_all_tes($kode_thak);
+	$this->load->view('home',$data);
 	}
 
 	public function daftar()

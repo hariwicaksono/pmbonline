@@ -22,12 +22,12 @@
         <div class="small-box bg-blue">
           <div class="inner">
             <h3><?php echo $hitung_camaba;?></h3>
-            <p class="info-box-text"><strong>Data Pendaftar</strong></p>
+            <p class="info-box-text"><strong>Pendaftar</strong></p>
           </div>
           <div class="icon">
           <i class="fa fa-users"></i>
           </div>
-          <a href="<?= base_url('administrator/pendaftaran')  ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="<?= base_url('administrator/pendaftaran')  ?>" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -35,12 +35,12 @@
         <div class="small-box bg-yellow">
           <div class="inner">
             <h3><?php echo $thak_aktif;?></h3>
-            <p class="info-box-text"><strong>Data Tahun Akademik</strong></p>
+            <p class="info-box-text"><strong>Tahun Akademik</strong></p>
           </div>
           <div class="icon">
           <i class="fa fa-calendar-check-o"></i>
           </div>
-          <a href="<?= base_url('administrator/thak')  ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="<?= base_url('administrator/thak')  ?>" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -50,12 +50,12 @@
         <div class="small-box bg-green">
           <div class="inner">
             <h3><?php echo $hitung_prodi;?></h3>
-            <p class="info-box-text"><strong>Data Prodi</strong></p>
+            <p class="info-box-text"><strong>Prodi</strong></p>
           </div>
           <div class="icon">
           <i class="fa fa-graduation-cap"></i>
           </div>
-          <a href="<?= base_url('administrator/prodi')  ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="<?= base_url('administrator/prodi')  ?>" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
           </div>
           
         </div>
@@ -65,12 +65,12 @@
         <div class="small-box bg-red">
           <div class="inner">
             <h3><?php echo $hitung_pengumuman;?></h3>
-            <p class="info-box-text"><strong>Data Pengumuman</strong></p>
+            <p class="info-box-text"><strong>Pengumuman</strong></p>
           </div>
           <div class="icon">
           <i class="fa fa-bullhorn"></i>
           </div>
-          <a href="<?= base_url('administrator/pengumuman')  ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="<?= base_url('administrator/pengumuman')  ?>" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
           </div>
           <!-- small box -->
           
