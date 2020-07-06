@@ -1,9 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
- 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,16 +9,16 @@
     <meta name="author" content="">
 
     <title><?php echo $site_name." - ".$site_title;?></title>
-
+	<link rel="shortcut icon" href="<?php echo base_url('assets/images/'.$site_favicon);?>">
 	<link rel="stylesheet" href="<?= base_url('assets/css/datepicker/bootstrap-datepicker3.css')  ?>"/>
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('vendor/twbs/bootstrap/dist/css/bootstrap.min.css') ?>" rel="stylesheet">
 	<link href="<?php echo base_url('assets/css/jasny-bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/scrolling-nav.css') ?>" rel="stylesheet">
 	<link href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/animate.css') ?>">
 
-    <script src="<?php echo base_url('assets/js/jquery.js') ?>"></script>
-    <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
+    <script src="<?php echo base_url('vendor/components/jquery/jquery.min.js') ?>"></script>
+    <script src="<?php echo base_url('vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script>
 	<script src="<?php echo base_url('assets/js/jasny-bootstrap.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/js/jquery.easing.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/js/scrolling-nav.js') ?>"></script>
@@ -89,7 +87,7 @@
 			          	<?php endforeach ?>
 			          </ul>
 			        </li> -->
-                	<li><a href="<?php echo base_url('administrator') ?>"><i class="fa fa-sign-in"></i> Login System</a></li>
+                	<li><a href="<?php echo base_url('administrator') ?>"><i class="fa fa-sign-in"></i> Login Staff</a></li>
                 </ul>
             </div>
         </div>
@@ -157,7 +155,7 @@
 					<a class="btn btn-danger page-scroll" href="#services"><i class="fa fa-fw fa-send-o"></i> Daftar Sekarang !</a> -->
                 <!-- </div> -->
                 <div class="col-md-4">
-                	<h3>Akademi Komunitas Negeri Nganjuk</h3>
+                	<h3></h3>
 					<div class="panel panel-primary">
 	                    <div class="panel-heading">
 	                        <h3 class="panel-title"><span class="glyphicon glyphicon-list-alt"></span> Informasi Terbaru</h3>
@@ -409,16 +407,16 @@
 				<p>&nbsp;</p>
 
                 <div class="col-lg-8" id="map">	
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53208.900272513834!2d111.89926258832604!3d-7.599429691762774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e784b0283d82377%3A0x733697641163a131!2sAkademi+Komunitas+Negeri+Nganjuk!5e0!3m2!1sid!2sid!4v1479946699239" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+					
                 </div>
 				 <div class="col-lg-4">	
 				 <h3>Contact</h3>
 					<p>&nbsp;</p>
-				<p align="left">Jl.Jenderal Gatot Subroto No.2b,Kauman<br>Nganjuk, JATIM 64411<br></p>
-				<p align="left"><i class="fa fa-phone"></i><abbr title="Telepon">P</abbr>: (0358) 3516569</p>
-				<p align="left"><i class="fa fa-envelope-o"></i><abbr title="Email">E</abbr>: aknganjuk@yahoo.com</p>
-				<p align="left"><i class="fa fa-clock-o"></i><abbr title="Jam Kantor">J</abbr>: Senin - Sabtu: 8:00 sampai 20:00</p>
-				<p align="left"><i class="fa fa-home"></i><abbr title="Website">W</abbr>: <a href="http://aknganjuk.ac.id/">aknganjuk.ac.id</a></p>
+				<p align="left"><br></p>
+				<p align="left"><i class="fa fa-phone"></i><abbr title="Telepon">P</abbr>: </p>
+				<p align="left"><i class="fa fa-envelope-o"></i><abbr title="Email">E</abbr>: </p>
+				<p align="left"><i class="fa fa-clock-o"></i><abbr title="Jam Kantor">J</abbr>: </p>
+				<p align="left"><i class="fa fa-home"></i><abbr title="Website">W</abbr>: <a href=""></a></p>
 				<ul class="list-unstyled list-inline list-social-icons">
                     <li>
                         <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
