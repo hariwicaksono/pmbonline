@@ -21,6 +21,9 @@ class Home extends CI_Controller {
         $data['prodi']=$this->model_app->get_prodi();
         $data['cek_reg']=$this->model_cek->cek_reg();
         $data['jadwal_tes']=$this->model_admin->get_all_tes($kode_thak);
+        $data['header'] = $this->load->view('header',$data, true);
+        $data['footer'] = $this->load->view('footer',$data, true);
+        $data['navbar'] = $this->load->view('navbar',$data, true);
 	$this->load->view('home',$data);
 	}
 

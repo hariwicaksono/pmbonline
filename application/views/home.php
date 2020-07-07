@@ -1,159 +1,26 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title><?php echo $site_name." - ".$site_title;?></title>
-	<link rel="shortcut icon" href="<?php echo base_url('assets/images/'.$site_favicon);?>">
-	<link rel="stylesheet" href="<?= base_url('assets/css/datepicker/bootstrap-datepicker3.css')  ?>"/>
-    <link href="<?php echo base_url('vendor/twbs/bootstrap/dist/css/bootstrap.min.css') ?>" rel="stylesheet">
-	<link href="<?php echo base_url('assets/css/jasny-bootstrap.min.css') ?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/scrolling-nav.css') ?>" rel="stylesheet">
-	<link href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/animate.css') ?>">
-
-    <script src="<?php echo base_url('vendor/components/jquery/jquery.min.js') ?>"></script>
-    <script src="<?php echo base_url('vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script>
-	<script src="<?php echo base_url('assets/js/jasny-bootstrap.min.js') ?>"></script>
-    <script src="<?php echo base_url('assets/js/jquery.easing.min.js') ?>"></script>
-    <script src="<?php echo base_url('assets/js/scrolling-nav.js') ?>"></script>
-    <script src="<?=base_url('assets/plugins/newsticker/jquery.bootstrap.newsbox.min.js') ?>" type="text/javascript"></script>
-    <script type="text/javascript" src="<?= base_url('assets/js/datepicker/bootstrap-datepicker.min.js')  ?>"></script>
-	<script type="text/javascript" src="<?= base_url('assets/js/datepicker/bootstrap-datepicker.id.min.js')  ?>" charset="UTF-8"></script>
-	 <script src="<?= base_url('assets/js/wow.min.js')  ?>"></script>
-	<style>
-		#map {
-			margin: auto;
-			border: 1px solid #2c3e50;
-		}
-
-		ul#gulung
-	            {
-	                 padding:0px;
-	                 margin:0px;
-	                 list-style:none;
-	            }
-	            #gulung .news-item
-	            {
-	                 padding:1px 1px;
-	                 margin:0px;
-	                 border-bottom:1px dotted #555; 
-	            }
-	</style>
-</head>
+<?php echo $header;?>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><strong><i class="fa fa-fw fa-home"></i> Home</strong></a>
-            </div>
 
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about"><i class="fa fa-flag"></i> Prodi</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#alur"><i class="fa fa-map"></i> Alur Pendaftaran</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services"><i class="fa fa-file-text"></i> Formulir Pendaftaran!</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact"><i class="fa fa-university"></i> Panitia</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <!-- <li class="dropdown">
-			          <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-fw fa-bullhorn"></i> Pengumuman<span class="caret"></span></a>
-			          <ul class="dropdown-menu">
-			          	<?php foreach ($prodi as $data_pro): ?>
-			          		<li><a href="<?=base_url('home/pengumuman_maba/'.$data_pro->kode_prodi.'') ?>" target="_blank"><?=$data_pro->jenjang ?> <?=$data_pro->nama_prodi ?></a></li>
-			          	<?php endforeach ?>
-			          </ul>
-			        </li> -->
-                	<li><a href="<?php echo base_url('administrator') ?>"><i class="fa fa-sign-in"></i> Login Staff</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    					
+    <?php echo $navbar;?>					
 
     <section id="intro" class="intro-section">
         <div class="container">
+		
         	<div class="page-header">
-			    <h1>Penerimaan Mahasiswa Baru Tahun Akademik <?=$thak->tahun_ajaran ?></h1>
+			<div class="alert alert-info" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+				</button>
+				Penerimaan Mahasiswa Baru Tahun Akademik <?=$thak->tahun_ajaran ?>
+			</div>
 			</div>
 			 <?php echo $this->session->flashdata('error_daftar'); ?>
             <div class="row wow fadeInUp" data-wow-delay="100ms" data-wow-duration="700ms">
                 <div class="col-lg-8">
-                   <!-- Full Page Image Background Carousel Header -->
-					<div id="myCarousel" class="carousel slide">
-						<!-- Indicators -->
-						<ol class="carousel-indicators">
-							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-							<li data-target="#myCarousel" data-slide-to="1"></li>
-							<li data-target="#myCarousel" data-slide-to="2"></li>
-						</ol>
-
-						<!-- Wrapper for Slides -->
-						<div class="carousel-inner">
-							<div class="item active">
-								<!-- Set the first background image using inline CSS below. -->
-								<img class="img-responsive" src="<?=base_url('assets') ?>/images/slide1.jpg" alt="">
-								<div class="carousel-caption">
-									<h4>Wisuda Mahasiswa Angkatan 2</h4>
-								</div>
-							</div>
-							<div class="item">
-								<!-- Set the second background image using inline CSS below. -->
-								<img class="img-responsive" src="<?=base_url('assets') ?>/images/slide2.jpg" alt="">
-								<div class="carousel-caption">
-									<h4>Pra PEKA Mahasiswa BARU Tahun Akademik 2016/2017</h4>
-								</div>
-							</div>
-							<div class="item">
-								<!-- Set the third background image using inline CSS below. -->
-								<img class="img-responsive" src="<?=base_url('assets') ?>/images/slide3.jpg" alt="">
-								<div class="carousel-caption">
-									<h4>Kegiatan Manajemen POLIJE di Nganjuk
-									</h4>
-								</div>
-							</div>
-						</div>
-
-						<!-- Controls -->
-						<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-							<span class="icon-prev"></span>
-						</a>
-						<a class="right carousel-control" href="#myCarousel" data-slide="next">
-							<span class="icon-next"></span>
-						</a>
-
-					</div>
+                  
                 </div>
-                   <!--  <h1>Akademi Komunitas Negeri Nganjuk<br><small>Perguruan Tinggi Negeri <em>pertama</em> di Nganjuk !</small></h1>
-					<p>&nbsp;</p>
-                    <p>Bergabunglah bersama <strong>Akademi Komunitas Negeri Nganjuk</strong> dengan pilihan Program Studi (Prodi) pilihan.<br>Bekali diri anda kompetensi untuk meningkatkan karier dan peluang usaha.</p>
-					<p>&nbsp;</p>
-                    <a class="btn btn-info page-scroll" href="#about">Prodi Pilihan</a>
-					<a class="btn btn-danger page-scroll" href="#services"><i class="fa fa-fw fa-send-o"></i> Daftar Sekarang !</a> -->
-                <!-- </div> -->
+               
                 <div class="col-md-4">
                 	<h3></h3>
 					<div class="panel panel-primary">
@@ -202,12 +69,10 @@
             <div class="row wow fadeInUp" data-wow-delay="100ms" data-wow-duration="700ms">
                 <div class="col-lg-12">
 					<div class="col-lg-6">
-						<h2>Manajemen Informatika</h2>
-						<img src="<?php echo base_url('assets/images/mif.jpg') ?>" alt="Laboratorium Komputer" class="img-thumbnail img-responsive">
+						
 					</div>
 					<div class="col-lg-6">
-						<h2>Teknologi Industri Pangan</h2>
-						<img src="<?php echo base_url('assets/images/tipclass.jpg') ?>" alt="Laboratorium Komputer" class="img-thumbnail img-responsive">
+						
 					</div>
                 </div>
             </div>
@@ -436,40 +301,6 @@
         </div>
     </section>
 
-		<script type="text/javascript">
-
-			wow = new WOW(
-			  {
-				animateClass: 'animated',
-				offset:       100,
-				callback:     function() {
-				 
-				}
-			  }
-			);
-			 wow.init();
-
-	      $(".date-picker").datepicker( {
-          format: " yyyy-mm-dd", // Notice the Extra space at the beginning
-          autoclose: true
-     		 });
-
-	       $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    });
-
-	      $(document).ready( function () {
-		      	$("#gulung").bootstrapNews({
-	            newsPerPage: 2,
-	            autoplay: true,
-	            direction: 'up',
-	            newsTickerInterval: 3000,
-	            onToDo: function () {
-	                //console.log(this);
-	            }
-	        })
-	      });
-		</script>
-
+<?php echo $footer;?>
 </body>
 </html>
