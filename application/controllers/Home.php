@@ -15,15 +15,33 @@ class Home extends CI_Controller {
         $data['site_title'] = $site_info->site_title;
         $data['site_logo'] = $site_info->site_logo_header;
         $data['site_favicon'] = $site_info->site_favicon;
+        $data['site_phone'] = $site_info->site_phone;
+        $data['site_email'] = $site_info->site_email;
+        $data['site_website'] = $site_info->site_website;
+        $data['site_facebook'] = $site_info->site_facebook;
+        $data['site_twitter'] = $site_info->site_twitter;
+        $data['site_instagram'] = $site_info->site_instagram;
+        $data['site_theme'] = $site_info->site_theme;
         $kode_thak=$this->model_app->kode_thak_aktif();
         $data['informasi']=$this->model_app->get_all_info($kode_thak);
         $data['thak']=$this->model_admin->ambil_thak_aktif();
         $data['prodi']=$this->model_app->get_prodi();
+        $data['prodi1']=$this->model_app->get_prodi();
         $data['cek_reg']=$this->model_cek->cek_reg();
         $data['jadwal_tes']=$this->model_admin->get_all_tes($kode_thak);
         $data['header'] = $this->load->view('header',$data, true);
         $data['footer'] = $this->load->view('footer',$data, true);
         $data['navbar'] = $this->load->view('navbar',$data, true);
+        $slideshow= $this->db->get('slideshow', 1)->row();
+        $data['slide_1'] = $slideshow->slide_1;
+        $data['slide_2'] = $slideshow->slide_2;
+        $data['slide_3'] = $slideshow->slide_3;
+        $data['slide_1_headline'] = $slideshow->slide_1_headline;
+        $data['slide_1_caption'] = $slideshow->slide_1_caption;
+        $data['slide_2_headline'] = $slideshow->slide_2_headline;
+        $data['slide_2_caption'] = $slideshow->slide_2_caption;
+        $data['slide_3_headline'] = $slideshow->slide_3_headline;
+        $data['slide_3_caption'] = $slideshow->slide_3_caption;
 	$this->load->view('home',$data);
 	}
 
@@ -124,22 +142,22 @@ class Home extends CI_Controller {
         $d['data']=$this->model_app->cetak_form($id);
         $d['jadwal']=$this->model_admin->get_all_tes($kode_thak);
        // load mPDF library
-        $this->load->library('m_pdf');
+        //$this->load->library('m_pdf');
 
        
         $pdfFilePath ="registrasi-".time()."-download.pdf";
  
         
         //actually, you can pass mPDF parameter on this load() function
-        $pdf = $this->m_pdf->load();
-        
+        //$pdf = $this->m_pdf->load();
+        $mpdf = new \Mpdf\Mpdf();
         $html=$this->load->view('bukti_reg',$d , true);
 
         //generate the PDF!
-        $pdf->WriteHTML($html);
+        $mpdf->WriteHTML($html);
         
         //offer it to user via browser download! (The PDF won't be saved on your server HDD)
-        $pdf->Output($pdfFilePath, "I");
+        $mpdf->Output($pdfFilePath, "I");
 
     }
 

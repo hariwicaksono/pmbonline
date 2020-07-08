@@ -165,6 +165,37 @@ class model_admin extends CI_Model {
 		    return true;
 	}
 
+	public function data_pengaturan()
+	{
+		$query = $this->db->select('*')
+                ->get('pengaturan');
+		if($query->num_rows() > 0){
+			return $query->result();
+		}else{
+			return false;
+		}
+	}
+
+	public function ambil_pengaturan($id)
+	{
+		$query = $this->db->get_where('pengaturan', array('site_id' => $id));
+		if ($query) {
+			return $query->row();
+		}else{
+			return false;
+		}
+	}
+
+	public function update_pengaturan($id,$data)
+	{
+		$query = $this->db->update('pengaturan', $data, array('site_id' => $id));
+		if ($query) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	public function data_jenjang()
 	{
 		$query = $this->db->select('*')

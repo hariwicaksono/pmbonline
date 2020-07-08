@@ -22,7 +22,8 @@
 
 	      $(document).ready( function () {
 		      	$("#gulung").bootstrapNews({
-	            newsPerPage: 2,
+				newsPerPage: 1,
+				navigation: true,
 	            autoplay: true,
 	            direction: 'up',
 	            newsTickerInterval: 3000,

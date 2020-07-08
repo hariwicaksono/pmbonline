@@ -9,7 +9,7 @@
 				redirect('home');
 			}
 		}
-	
+	 
 		public function index()
 		{
 			$site_info = $this->db->get('pengaturan', 1)->row();
@@ -83,6 +83,11 @@
 	        		$result=$this->model_app->do_verifikasi($data,$id);
 	        		redirect('administrator/verifikasi');
 	        	}else{
+					$site_info = $this->db->get('pengaturan', 1)->row();
+					$d['site_name'] = $site_info->site_name;
+					$d['site_title'] = $site_info->site_title;
+					$d['site_logo'] = $site_info->site_logo_header;
+					$d['site_favicon'] = $site_info->site_favicon;
 	        		$d['siswa']=$this->model_admin->get_detail_siswa($id);
 	        		$d['content']=$this->load->view('admin/verifikasi/do_verifikasi',$d, TRUE);
 	       			$this->load->view('admin/home', $d); 
@@ -102,22 +107,23 @@
 		        $d['jadwal']=$this->model_admin->get_all_tes($kode_thak);
 		       //print_r($data);
 		       //load mPDF library
-		        $this->load->library('m_pdf');
+		        //$this->load->library('m_pdf');
 
 		       
 		        $pdfFilePath ="registrasi-".time()."-download.pdf";
 		 
 		        
 		        //actually, you can pass mPDF parameter on this load() function
-		        $pdf = $this->m_pdf->load();
-		        
+		        //$pdf = $this->m_pdf->load();
+				$mpdf = new \Mpdf\Mpdf();
+				
 		        $html=$this->load->view('admin/verifikasi/cetak_verifikasi',$d, true);
 
 		        //generate the PDF!
-		        $pdf->WriteHTML($html);
+		        $mpdf->WriteHTML($html);
 		        
 		        //offer it to user via browser download! (The PDF won't be saved on your server HDD)
-		        $pdf->Output($pdfFilePath, "I");
+		        $mpdf->Output($pdfFilePath, "I");
 	        }
 	        else{
 	        	// Whoops, we don't have a page for that!
