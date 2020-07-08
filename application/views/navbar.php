@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-fixed-top shadow">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-fixed-top shadow border-top border-<?php echo $site_theme;?>">
 <div class="container">
 
     <a class="navbar-brand page-scroll" href="#page-top"><?php echo $site_name;?></a>
@@ -38,3 +38,4 @@
             </div>
    </div>  
     </nav>
+    
