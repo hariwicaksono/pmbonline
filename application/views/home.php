@@ -87,7 +87,7 @@
 								<?php endforeach; ?>
 						<?php else: ?>
 							<tr>
-								<td colspan="4">Tidak Ada Tes</td>
+								<td colspan="4">Tidak Ada Jadwal</td>
 							</tr>
 						<?php endif; ?>
             				
@@ -113,12 +113,12 @@
 	                        		$diff=date_diff($date,$now);
 		                       		
 	                        		if ($diff->d < 1) {
-	                        			$label='<label class="badge badge-success">Baru</label>';
+	                        			$label='<span class="badge badge-info">New</span>';
 	                        		}else{
 	                        			$label='';
 	                        		}
 	                        	  ?>
-	                        	 	<li class="news-item"><?=$label  ?><p><?=$info->info ?></p></li>
+	                        	 	<li class="news-item"><p><?=$info->info ?> <?=$label?></p></li>
 	                        	 <?php endforeach ?>
 
 	                        <?php else: ?>
@@ -334,7 +334,7 @@
                         <a class="text-danger" href="<?php echo $site_instagram;?>"><i class="fa fa-instagram fa-2x"></i></a>
                     </li>
                     <li class="list-inline-item">
-                        <a class="text-info" href="<?php echo $site_twitter;?>"><i class="fa fa-twitter-square fa-2x"></i></a>
+                        <a class="text-danger" href="<?php echo $site_youtube;?>"><i class="fa fa-youtube-play fa-2x"></i></a>
                     </li>
                     
                 </ul>

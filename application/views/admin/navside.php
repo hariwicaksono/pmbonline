@@ -82,7 +82,7 @@
         <li><a href="<?php echo base_url('administrator/thak') ?>"><i class="fa fa-calendar-check-o"></i> <span>Tahun Akademik</span></a></li>
         <li><a href="<?php echo base_url('administrator/tes') ?>"><i class="fa fa-calendar-o"></i> <span>Jadwal Tes</span></a></li>
         <li><a href="<?php echo base_url('administrator/kelulusan') ?>"><i class="fa fa-file-o"></i> <span>Kelulusan</span></a></li>
-        
+        <li><a href="<?php echo base_url('administrator/pengaturan') ?>"><i class="fa fa-cog" aria-hidden="true"></i> <span>Pengaturan</span></a></li>
         <li class="treeview">
           <a href="javascript:void(0)"><i class="fa fa-link"></i> <span>Master Data</span>
             <span class="pull-right-container">

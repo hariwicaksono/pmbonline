@@ -23,7 +23,7 @@
 	footer: myFooter;
 
 	}
-	
+	 
 	td {
 	    padding-top: .20em;
 	    padding-bottom: .20em;
@@ -34,16 +34,14 @@
 <body>
 <htmlpageheader name="myHeader1" style="display:none">
 	<table width="100%" style="border-bottom: 2px solid #000000; vertical-align: top; font-family:
-		serif; font-size: 9pt; color: #000088;"><tr>		
+		serif; font-size: 9pt; color: #111;"><tr>		
 		<td width="20%" align="center">
 		<div>
-			<img src="<?=base_url('assets/ak.png') ?>" width="75px" />
+			<img src="<?=base_url('assets/images/').$site_logo;?>" width="55px" />
 		</div></td>
-		<td width="80%" style="text-align: center;">
-			<h5>KEMENTERIAN RISET DAN TEKNOLOGI DAN PENDIDIKAN TINGGi</h5>
-			<h3>AKADEMI KOMUNITAS NEGERI NGANJUK</h3>
-			<h4>PDD POLITEKNIK NEGERI JEMBER</h4>
-			<h5>Jl. Gatot Subroto No. 2 Nganjuk Telp. (0358) 321483 email : aknganjuk@yahoo.com</h5>
+		<td width="80%" style="text-align: left;">
+			<h2><strong><?php echo $site_title;?></strong></h2>
+			<h5><?php echo $site_address;?> Telp. <?php echo $site_phone;?> email: <?php echo $site_email;?></h5>
 		</td>
 	</tr>
 	</table>
@@ -64,14 +62,12 @@
 
 </htmlpagefooter>
 	<div class="container">
-			<table width="100%" style="text-align: center; vertical-align: top; font-family border-spacing: 5px:
-			serif; font-size: 15pt; color: #000088;">
+			<table width="100%" style="text-align: left; vertical-align: top; font-family border-spacing: 5px:
+			serif; font-size: 15pt; color: #111;">
 			<tr>		
 				<td width="80%">
-					&nbsp;
-				<h2><strong>Bukti Pendaftaran Mahasiswa Baru</strong></h2>
-				<h3>Tahun Akademik <?=$data->tahun_ajaran ?></h3>
-				&nbsp;
+				<h3><strong>Bukti Pendaftaran Mahasiswa Baru</strong></h3>
+				<h4>Tahun Akademik <?=$data->tahun_ajaran ?></h4>
 				</td>
 				<td width="20%">
 					<img src="<?=base_url('photo/'.$data->foto.'') ?>" style="border:1px  solid #000000;" width="100px" />
@@ -80,7 +76,7 @@
 			</table>
 			&nbsp;
 		<table width="100%" style="vertical-align: top; font-family:
-			serif; font-size: 13pt; color: #000088;">
+			serif; font-size: 12pt; color: #111;">
 			<tr>		
 				<td width="20%">
 					<strong>Nama</strong>
@@ -196,7 +192,7 @@
 				        <td><?=$tes->nama_tes?></td>
 				        <td><?=date('d-m-Y', strtotime($tes->tgl_tes)); ?></td>
 				       <td><?=$tes->mulai?> <strong>s/d</strong> <?=$tes->sampai?> </td>
-				        <td>Kampus AKN Nganjuk</td>
+				        <td>Kampus <?php echo $site_title;?></td>
 				    </tr>
 				<?php endforeach; ?>
 				<?php else: ?>
@@ -207,13 +203,13 @@
 			</tbody>
 		</table> -->
 		<p>&nbsp;</p>
-		<div class="alert alert-info">
+		<div class="alert alert-warning">
 			<p>* Dengan ini saya menyatakan bahwa data yang saya masukan adalah benar.<br>
-				* Harap melakukan Verifikasi di Kampus AKN Nganjuk sebelum tes berlangsung.<br>
+				* Harap melakukan Verifikasi di Kampus <?php echo $site_title;?> sebelum tes berlangsung.<br>
 				* Berkas yang harus dibawa saat verifikasi : </p>
 			<ul>
 				<li>Bukti Pendafatran</li>
-				<li>Pass Poto 3x4 ( 4lembar )</li>
+				<li>Pass Poto 3x4 ( 4 Lembar )</li>
 				<li>Foto Copy Ijazah Asli/Sementara</li>
 				<li>Foto Copy SKHUN Asli/Sementara</li>
 				<li>Membayar biaya pendaftaran Rp. 200.000</li>

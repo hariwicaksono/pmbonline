@@ -17,7 +17,7 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-graduation-cap"></i> Data Pengaturan</h3>
+              <h3 class="box-title"><i class="fa fa-gear"></i> Data Pengaturan</h3>
               <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                 <!-- Buttons, labels, and many other things can be placed here! -->
@@ -46,34 +46,101 @@
       </div>
     </section>
     <!-- /.content -->
-        <div class="modal fade" role="dialog" id="modal_add">
-          <div class="modal-dialog" role="document">
+        <div class="modal fade" role="dialog" id="modal_add" >
+          <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="mod-judul"></h4>
               </div>
-              <div class="modal-body">
+              <div class="modal-body" style="max-height: calc(100vh - 212px);overflow-y: auto;">
                 <div class="container-fluid">
                 <div id="pesan-error">  
                 </div>
                   <div class="row">
-                    <form id="form" method="POST" action="javascript:void(0);">
+                    <form id="form" class="form-horizontal" method="POST" action="javascript:void(0);">
                       <input type="hidden" id="key" name="key">
+
                       <div class="form-group">
-                      <label for="">Nama Pendek</label>
-                        <div class="input-group">
+                          <label for="" class="col-sm-2 control-label">Favicon</label>
+                          <div class="col-sm-10">
+                              <input type="file" name="site_favicon" class="form-control" >
+                              <p class="help-block">Favicon harus beresolusi 32 x 32 Pixels.</p>
+                              <input type="hidden" class="form-control" name="old_site_favicon" id="site_favicon">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="" class="col-sm-2 control-label">Logo Header</label>
+                          <div class="col-sm-10">
+                              <input type="file" name="site_logo_header" class="form-control" >
+                              <p class="help-block">Logo harus beresolusi 248 x 54 Pixels.</p>
+                              <input type="hidden" class="form-control" name="old_site_logo_header" id="site_logo_header">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">Nama Situs</label>
+                      <div class="col-sm-10">             
                           <input type="text" class="form-control" name="site_name" id="site_name">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">Nama Kampus</label>       
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="site_title" id="site_title">
                         </div>
                       </div>
 
                       <div class="form-group">
-                      <label for="">Nama Panjang</label>
-                        <div class="input-group">
-                        <input type="text" class="form-control" name="site_title" id="site_title">
+                      <label for="" class="col-sm-2 control-label">Alamat</label>       
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="site_address" id="site_address">
                         </div>
                       </div>
-                      
+
+                      <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">Telepon</label>       
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="site_phone" id="site_phone">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">Email</label>       
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="site_email" id="site_email">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">Website Utama</label>       
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="site_website" id="site_website">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">Link Facebook</label>       
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="site_facebook" id="site_facebook">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">Link Instagram</label>  
+                      <div class="col-sm-10">     
+                        <input type="text" class="form-control" name="site_instagram" id="site_instagram">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">Link Youtube</label>       
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" name="site_youtube" id="site_youtube">
+                        </div>
+                      </div>
            
                     </form>
                   </div>
@@ -104,7 +171,7 @@
                         '<td>'+data[i].site_name+'</td>'+
                         '<td>'+data[i].site_title+'</td>'+
                         '<td>'+
-                          '<a href="javascript:void(0);" class="btn btn-success btn-xs" onclick="edit('+data[i].site_id+')"><i class="fa fa-edit"></i> Edit</a>  '+
+                          '<a href="javascript:void(0);" class="btn btn-success btn-sm" onclick="edit('+data[i].site_id+')"><i class="fa fa-edit"></i> Edit</a>  '+
                         '</td>'+
                         '</tr>';
                   no++;
@@ -124,7 +191,7 @@
 
       function edit(id) {
         $("#btn-upd-pengaturan").show();
-        $("#mod-judul").html('<i class="fa fa-graduation-cap"></i> Edit Pengaturan');
+        $("#mod-judul").html('<i class="fa fa-gear"></i> Edit Pengaturan');
 
          $.ajax({
           method:"GET",
@@ -132,8 +199,17 @@
           dataType:'json',
           success:function(data){
             //console.log(data);
+              $("#site_favicon").val(data.site_favicon);
+              $("#site_logo_header").val(data.site_logo_header);
               $("#site_name").val(data.site_name);
               $("#site_title").val(data.site_title);
+              $("#site_address").val(data.site_address);
+              $("#site_phone").val(data.site_phone);
+              $("#site_email").val(data.site_email);
+              $("#site_website").val(data.site_website);
+              $("#site_facebook").val(data.site_facebook);
+              $("#site_instagram").val(data.site_instagram);
+              $("#site_youtube").val(data.site_youtube);
               $("#key").val(data.site_id);
               $("#modal_add").modal('show');
           }

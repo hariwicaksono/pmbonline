@@ -6,7 +6,7 @@ class Home extends CI_Controller {
 	{
 		parent::__construct();
 		
-	}
+	} 
 
 	public function index()
 	{
@@ -19,7 +19,7 @@ class Home extends CI_Controller {
         $data['site_email'] = $site_info->site_email;
         $data['site_website'] = $site_info->site_website;
         $data['site_facebook'] = $site_info->site_facebook;
-        $data['site_twitter'] = $site_info->site_twitter;
+        $data['site_youtube'] = $site_info->site_youtube;
         $data['site_instagram'] = $site_info->site_instagram;
         $data['site_theme'] = $site_info->site_theme;
         $kode_thak=$this->model_app->kode_thak_aktif();
@@ -138,6 +138,13 @@ class Home extends CI_Controller {
 
     public function cetak_bukti($id)
     {
+        $site_info = $this->db->get('pengaturan', 1)->row();
+        $d['site_name'] = $site_info->site_name;
+        $d['site_title'] = $site_info->site_title;
+        $d['site_logo'] = $site_info->site_logo_header;
+        $d['site_address'] = $site_info->site_address;
+        $d['site_phone'] = $site_info->site_phone;
+        $d['site_email'] = $site_info->site_email;
         $kode_thak=$this->model_app->kode_thak_aktif();
         $d['data']=$this->model_app->cetak_form($id);
         $d['jadwal']=$this->model_admin->get_all_tes($kode_thak);

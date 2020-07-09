@@ -17,11 +17,12 @@ class Main extends CI_Controller {
 		$data['site_title'] = $site_info->site_title;
 		$data['site_logo'] = $site_info->site_logo_header;
 		$data['site_favicon'] = $site_info->site_favicon;
-		$d['hitung_camaba'] = $this->db->count_all('pendaftaran');
+		
 		$thak= $this->db->get_where('thak', array('status' => "Aktif"))->row();
 		$d['thak_aktif'] = $thak->tahun_ajaran;
+		$d['hitung_camaba'] = $this->db->where('thak',$thak->thak)->count_all_results("pendaftaran");
 		$d['hitung_prodi'] = $this->db->count_all('prodi');
-		$d['hitung_pengumuman'] = $this->db->count_all('informasi');
+		$d['hitung_pengumuman'] = $this->db->where('thak',$thak->thak)->count_all_results("informasi");
 		$data['content']=$this->load->view('admin/main/view',$d, true);
 		$this->load->view('admin/home',$data);
 	}
