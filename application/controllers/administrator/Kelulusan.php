@@ -12,7 +12,7 @@ class Kelulusan extends CI_Controller {
 		$site_info = $this->db->get('pengaturan', 1)->row();
 		$data['site_name'] = $site_info->site_name;
 		$data['site_title'] = $site_info->site_title;
-		$data['site_logo'] = $site_info->site_logo_header;
+		$data['site_logo'] = $site_info->site_logo;
 		$data['site_favicon'] = $site_info->site_favicon;
 		$d['prodi']=$this->model_app->get_prodi();
 		$data['content']=$this->load->view('admin/kelulusan/view', $d, TRUE);
@@ -24,7 +24,7 @@ class Kelulusan extends CI_Controller {
 		$site_info = $this->db->get('pengaturan', 1)->row();
 		$data['site_name'] = $site_info->site_name;
 		$data['site_title'] = $site_info->site_title;
-		$data['site_logo'] = $site_info->site_logo_header;
+		$data['site_logo'] = $site_info->site_logo;
 		$data['site_favicon'] = $site_info->site_favicon;
 		$thak=$this->model_app->kode_thak_aktif();
 		$d['prodi']=$this->model_app->ambil_prodi($kode_prodi);

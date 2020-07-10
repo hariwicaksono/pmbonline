@@ -15,7 +15,7 @@ class Main extends CI_Controller {
 		$site_info = $this->db->get('pengaturan', 1)->row();
 		$data['site_name'] = $site_info->site_name;
 		$data['site_title'] = $site_info->site_title;
-		$data['site_logo'] = $site_info->site_logo_header;
+		$data['site_logo'] = $site_info->site_logo;
 		$data['site_favicon'] = $site_info->site_favicon;
 		
 		$thak= $this->db->get_where('thak', array('status' => "Aktif"))->row();

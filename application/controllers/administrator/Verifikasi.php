@@ -15,7 +15,7 @@
 			$site_info = $this->db->get('pengaturan', 1)->row();
 			$data['site_name'] = $site_info->site_name;
 			$data['site_title'] = $site_info->site_title;
-			$data['site_logo'] = $site_info->site_logo_header;
+			$data['site_logo'] = $site_info->site_logo;
 			$data['site_favicon'] = $site_info->site_favicon;
 			$data['content']=$this->load->view('admin/verifikasi/view','', TRUE);
 			$this->load->view('admin/home', $data);
@@ -86,7 +86,7 @@
 					$site_info = $this->db->get('pengaturan', 1)->row();
 					$d['site_name'] = $site_info->site_name;
 					$d['site_title'] = $site_info->site_title;
-					$d['site_logo'] = $site_info->site_logo_header;
+					$d['site_logo'] = $site_info->site_logo;
 					$d['site_favicon'] = $site_info->site_favicon;
 	        		$d['siswa']=$this->model_admin->get_detail_siswa($id);
 	        		$d['content']=$this->load->view('admin/verifikasi/do_verifikasi',$d, TRUE);
@@ -98,9 +98,17 @@
 	        }
 		
 		}
-
+ 
 		public function cetak_verifikasi($id=NULL)
 		{
+
+			$site_info = $this->db->get('pengaturan', 1)->row();
+			$d['site_name'] = $site_info->site_name;
+			$d['site_title'] = $site_info->site_title;
+			$d['site_logo'] = $site_info->site_logo;
+			$d['site_address'] = $site_info->site_address;
+			$d['site_phone'] = $site_info->site_phone;
+			$d['site_email'] = $site_info->site_email;
 			if (!empty($id)){
 	        	$kode_thak=$this->model_app->kode_thak_aktif();
 		        $d['data']=$this->model_app->cetak_ver($id);

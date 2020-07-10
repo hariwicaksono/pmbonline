@@ -6,12 +6,12 @@
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1><i class="fa fa-dashboard"></i>
-        Tes
+        Jadwal
         <small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Jadwal</li>
       </ol>
     </section>
 
@@ -26,7 +26,7 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-tags"></i> Jadwal Tes</h3>
+              <h3 class="box-title"><i class="fa fa-tags"></i> Jadwal</h3>
               <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
@@ -37,12 +37,12 @@
             <div class="box-body">
               <div id="pesan-sukses">
               </div>
-              <button type="button" id="add_button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal_tes"><i class="fa fa-fw fa-plus"></i> Tambah Jadwal Tes</button>
+              <button type="button" id="add_button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal_tes"><i class="fa fa-fw fa-plus"></i> Tambah Jadwal</button>
               <table class="table table-hover table-bordered table-responsive">
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>Nama Tes</th>
+                    <th>Nama Jadwal</th>
                     <th>Tanggal</th>
                     <th colspan="2" style="text-align: center;">Jam</th>
                   </tr>

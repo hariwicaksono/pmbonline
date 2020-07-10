@@ -61,7 +61,7 @@
     <section class="sidebar">
 
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel">
+      <div class="user-panel" style="height:60px">
         <div class="pull-left image">
           <img src="<?php echo base_url('assets/images/'.$site_logo);?>" width="160px" height="160px" class="img-circle" alt="User Image">
         </div>
@@ -80,9 +80,10 @@
          <li><a href="<?php echo base_url('administrator/verifikasi') ?>"><i class="fa fa-check"></i> <span>Verifikasi</span></a></li>
         <li><a href="<?php echo base_url('administrator/pendaftaran') ?>"><i class="fa fa-user-plus"></i> <span>Pendaftar</span></a></li>
         <li><a href="<?php echo base_url('administrator/thak') ?>"><i class="fa fa-calendar-check-o"></i> <span>Tahun Akademik</span></a></li>
-        <li><a href="<?php echo base_url('administrator/tes') ?>"><i class="fa fa-calendar-o"></i> <span>Jadwal Tes</span></a></li>
+        <li><a href="<?php echo base_url('administrator/tes') ?>"><i class="fa fa-calendar-o"></i> <span>Jadwal</span></a></li>
         <li><a href="<?php echo base_url('administrator/kelulusan') ?>"><i class="fa fa-file-o"></i> <span>Kelulusan</span></a></li>
         <li><a href="<?php echo base_url('administrator/pengaturan') ?>"><i class="fa fa-cog" aria-hidden="true"></i> <span>Pengaturan</span></a></li>
+        <li><a href="<?php echo base_url('administrator/pengaturan/slideshow') ?>"><i class="fa fa-slideshare" aria-hidden="true"></i> <span>Slideshow</span></a></li>
         <li class="treeview">
           <a href="javascript:void(0)"><i class="fa fa-link"></i> <span>Master Data</span>
             <span class="pull-right-container">

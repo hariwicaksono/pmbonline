@@ -16,7 +16,7 @@ class Thak extends CI_Controller {
 		$site_info = $this->db->get('pengaturan', 1)->row();
 		$data['site_name'] = $site_info->site_name;
 		$data['site_title'] = $site_info->site_title;
-		$data['site_logo'] = $site_info->site_logo_header;
+		$data['site_logo'] = $site_info->site_logo;
 		$data['site_favicon'] = $site_info->site_favicon;
 		$d['thak_aktif']=$this->model_admin->ambil_thak_aktif();
 		$data['content']=$this->load->view('admin/thak/view',$d, TRUE);

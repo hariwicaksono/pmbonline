@@ -13,7 +13,7 @@ class Home extends CI_Controller {
         $site_info = $this->db->get('pengaturan', 1)->row();
         $data['site_name'] = $site_info->site_name;
         $data['site_title'] = $site_info->site_title;
-        $data['site_logo'] = $site_info->site_logo_header;
+        $data['site_logo'] = $site_info->site_logo;
         $data['site_favicon'] = $site_info->site_favicon;
         $data['site_phone'] = $site_info->site_phone;
         $data['site_email'] = $site_info->site_email;
@@ -141,7 +141,7 @@ class Home extends CI_Controller {
         $site_info = $this->db->get('pengaturan', 1)->row();
         $d['site_name'] = $site_info->site_name;
         $d['site_title'] = $site_info->site_title;
-        $d['site_logo'] = $site_info->site_logo_header;
+        $d['site_logo'] = $site_info->site_logo;
         $d['site_address'] = $site_info->site_address;
         $d['site_phone'] = $site_info->site_phone;
         $d['site_email'] = $site_info->site_email;

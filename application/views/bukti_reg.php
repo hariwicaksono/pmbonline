@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Bukti Pendfataran</title>
+	<title>Bukti Pendaftaran</title>
 	
 	<link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
 	<link href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet">

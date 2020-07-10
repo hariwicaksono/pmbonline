@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Bukti Pendfataran</title>
+	<title>Cetak Kartu</title>
 	
 	<link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
 	<!-- <link href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet"> -->
@@ -34,33 +34,33 @@
 <body>
 <htmlpageheader name="myHeader1" style="display:none">
 	<table width="100%" style="border-bottom: 2px solid #000000; vertical-align: top; font-family:
-		serif; font-size: 9pt; color: #000088;"><tr>		
+		serif; font-size: 9pt; color: #111;"><tr>		
 		<td width="20%" align="center">
 		<div>
-			<img src="<?=base_url('assets/ak.png') ?>" width="55px" />
+			<img src="<?=base_url('assets/images/').$site_logo;?>" width="55px" />
 		</div></td>
 		<td width="80%" style="text-align: left;">
-			<h5>AKADEMI KOMUNITAS NEGERI NGANJUK</h5>
+			<h2><strong><?php echo $site_title;?></strong></h2>
 			<h4>KARTU PESERTA UJIAN</h4>
-			<h5>Penerimaan Mahasiswa Baru TA. 2017-2018</h5>
+			
 		</td>
 	</tr>
 	</table>
 </htmlpageheader>
 	<div class="container">
 			<table width="100%" style="text-align: left; vertical-align: top; font-family border-spacing: 5px:
-			serif; font-size: 10pt; color: #000088;">
+			serif; font-size: 10pt; color: #111;">
 			<tr>		
 				<td width="20%">
-					<p>NAMA Lengkap</p>
-					<p>Tgl lahir</p>
+					<p>Nama Lengkap</p>
+					<p>Tanggal lahir</p>
 					<p>Alamat</p>
 					<p>Sekolah Asal</p>
 					<p>Prodi Pilihan</p>
 					<p>Lokasi Ujian</p>
 					<p>&nbsp;</p>
 					<p>&nbsp;</p>
-					<p>Nganjuk, <?=date('m-d-Y') ?></p>
+					<p>Staff/Petugas</p>
 					<p>&nbsp;</p>
 					<p>&nbsp;</p>
 					<p>&nbsp;</p>
@@ -72,33 +72,10 @@
 					<p>: <?=$data->alamat ?></p>
 					<p>: <?=$data->sekolah ?></p>
 					<p>: <?=$data->jenjang ?> <?=$data->nama_prodi ?></p>
-					<p>: Kampus AKN Nganjuk</p>
-					<p>&nbsp;&nbsp;Jl.Gatot Subroto 2b .kauman nganjuk</p>
+					<p>: <?php echo $site_title;?></p>
+					<p>&nbsp;&nbsp;<?php echo $site_address;?></p>
 					<p>&nbsp;</p>
-					<table class="table table-bordered table-hover">
-						<thead>
-							<tr>
-								<th>Tes</th>
-								<th>Tanggal</th>
-								<th>Waktu</th>
-							</tr>
-						</thead>
-						<tbody>
-						<?php if ($jadwal): ?>
-						<?php foreach ($jadwal as $tes): ?>
-							<tr>
-						        <td><?=$tes->nama_tes?></td>
-						        <td><?=date('d-m-Y', strtotime($tes->tgl_tes)); ?></td>
-						       <td><?=$tes->mulai?> <strong>s/d</strong> <?=$tes->sampai?> </td>
-						    </tr>
-						<?php endforeach; ?>
-						<?php else: ?>
-							<tr>
-								<td colspan="3">Tidak Ada Tes</td>
-							</tr>
-						<?php endif; ?>
-						</tbody>
-					</table>
+					
 				</td>
 				<td width="20%" style="text-align: center;vertical-align: top;font-size: 10pt;"> 
 					<img src="<?=base_url('photo/'.$data->foto.'') ?>" style="border:1px  solid #000000;" width="80px" />
@@ -107,7 +84,7 @@
 					<br>&nbsp;
 					<br>&nbsp;
 					<br>&nbsp;
-					<strong>Yoga Adi Nugraha</strong>
+					<strong><?=$data->nama_pendaftar ?></strong>
 				</td>
 			</tr>
 			</table>

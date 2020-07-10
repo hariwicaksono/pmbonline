@@ -165,6 +165,16 @@ class model_admin extends CI_Model {
 		    return true;
 	}
 
+	public function update_slideshow($id,$data)
+	{
+		$query = $this->db->update('slideshow', $data, array('id' => $id));
+		if ($query) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	public function data_pengaturan()
 	{
 		$query = $this->db->select('*')
