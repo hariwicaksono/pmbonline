@@ -40,7 +40,7 @@ class Tes extends CI_Controller {
 		$table='agenda_tes';
 		$result=$this->model_admin->auto_insert($table,$data);
 		if ($result) {
-			$msg['pesan']='<div class="alert alert-success" role="alert">Tes berhasil  di tambahkan !</div>';
+			$msg['pesan']='<div class="alert alert-success" role="alert">Jadwal berhasil  di tambahkan</div>';
 			$msg['success'] = true;
 		}
 		echo json_encode($msg);
@@ -68,7 +68,7 @@ class Tes extends CI_Controller {
 				$no++;
 			}
 		}else{
-			$html.='<tr><td colspan="6">Tidak Ada Data Jadwal Tes</td></tr>';
+			$html.='<tr><td colspan="6">Tidak Ada Data Jadwal</td></tr>';
 		}
 		echo $html;
 	}
@@ -98,7 +98,7 @@ class Tes extends CI_Controller {
 			);
 		$query=$this->model_admin->update_tes($id,$data);
 		if ($query) {
-			$msg['pesan']='<div class="alert alert-success" role="alert">Tes berhasil  di Update !</div>';
+			$msg['pesan']='<div class="alert alert-success" role="alert">Jadwal berhasil  di Update</div>';
 			$msg['success'] = true;
 		}
 		echo json_encode($msg);
@@ -109,7 +109,7 @@ class Tes extends CI_Controller {
 		$id=$this->input->post('id', TRUE);
 		$q=$this->model_admin->hapus_tes($id);
 		if ($q) {
-			$msg['pesan']='<div class="alert alert-success" role="alert">Agenda Tes berhasil  di Di Hapus !</div>';
+			$msg['pesan']='<div class="alert alert-success" role="alert">Agenda Jadwal berhasil  di Di Hapus</div>';
 			$msg['success'] = true;
 		}
 		echo json_encode($msg);

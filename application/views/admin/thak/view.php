@@ -29,20 +29,23 @@
               </div><!-- /.box-tools -->
             </div><!-- /.box-header -->
             <div class="box-body">
-             <div class="callout callout-success">
-
-              <h4>Tahun Akademik <?=$thak_aktif->tahun_ajaran?> is Activated !</h4>
+             
+              
               <?php if ($thak_aktif->ket === 'Dibuka'): ?>
-                  <i class="fa fa-spin fa-refresh fa-4x"></i> 
-                  <h3><i class="fa fa-fw fa-exclamation"></i> Pendaftaran Telah Dibuka..!!</h3>
+                <div class="callout callout-success">
+                <h4 style="margin-top:0;">Tahun Akademik Aktif <strong><?=$thak_aktif->tahun_ajaran?></strong></h4>
+                  <h3><i class="fa fa-check" aria-hidden="true"></i> Pendaftaran Telah Dibuka</h3>
                   <button type="button" class="btn btn-danger btn-md" onclick="close_reg('<?=$thak_aktif->thak?>')"><i class="fa fa-fw fa-times-circle"></i> Tutup Pendaftaran</button>
+                  </div>
               <?php else: ?>
-                  <i class="fa fa-refresh fa-4x"></i> 
-                  <h3><i class="fa fa-fw fa-exclamation"></i> Pendaftaran Belum Dibuka..!!</h3>
-                  <button type="button" class="btn btn-primary btn-md" onclick="open_reg('<?=$thak_aktif->thak?>')"><i class="fa fa-fw fa-check-square-o"></i> Buka Sekarang..!!</button>
+                <div class="callout callout-warning">
+                <h4 style="margin-top:0;">Tahun Akademik Aktif <strong><?=$thak_aktif->tahun_ajaran?></strong></h4>
+                  <h3><i class="fa fa-fw fa-exclamation"></i> Pendaftaran Belum Dibuka</h3>
+                  <button type="button" class="btn btn-success btn-md" onclick="open_reg('<?=$thak_aktif->thak?>')"><i class="fa fa-fw fa-check-square-o"></i> Buka Sekarang</button>
+                  </div>
               <?php endif; ?>
 
-            </div>
+           
             </div><!-- /.box-body -->
           </div><!-- /.box -->
         </div>

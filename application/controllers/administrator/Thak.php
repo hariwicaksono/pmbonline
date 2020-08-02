@@ -44,11 +44,11 @@ class Thak extends CI_Controller {
 			$table='thak';
 			$q=$this->model_admin->auto_insert($table,$data);
 			if ($q) {
-				$msg['pesan']='<div class="alert alert-success" role="alert">Tahun Akademik berhasil  di tambahkan !</div>';
+				$msg['pesan']='<div class="alert alert-success" role="alert">Tahun Akademik berhasil  di tambahkan</div>';
 				$msg['success'] = true;
 			}
 		}else{
-			$msg['pesan']='<div class="alert alert-danger" role="alert">Maaf,Tahun Akademik sudah ada !</div>';
+			$msg['pesan']='<div class="alert alert-danger" role="alert">Maaf, Tahun Akademik sudah ada</div>';
 		}
 		echo json_encode($msg);
 	}
@@ -69,7 +69,7 @@ class Thak extends CI_Controller {
 		if ($q) {
 			echo json_encode($q);
 		}else{
-			$msg['pesan'] = '<tr><td colspan="7">Tidak Ada Data Tahun Akademik yang lain..!</td></tr>';
+			$msg['pesan'] = '<tr><td colspan="7">Tidak Ada Data Tahun Akademik yang lain</td></tr>';
 			echo json_encode($msg);
 		}
 	}
@@ -80,7 +80,7 @@ class Thak extends CI_Controller {
 		$q=$this->model_admin->hapus_thak($thak);
 		if ($q) {
 			$msg['success'] = true;
-			$msg['pesan'] = '<div class="alert alert-success" role="alert">Tahun Akademik berhasil  di Hapus !</div>';
+			$msg['pesan'] = '<div class="alert alert-success" role="alert">Tahun Akademik berhasil  di Hapus</div>';
 		}
 		echo json_encode($msg);
 	}

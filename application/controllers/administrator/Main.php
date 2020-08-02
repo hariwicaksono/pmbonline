@@ -40,7 +40,7 @@ class Main extends CI_Controller {
 		$result=$this->model_app->tambah_info($data);
 		$msg['success'] = false;
 		if ($result) {
-			$msg['pesan']='<div class="alert alert-success" role="alert">Informasi berhasil  di tambahkan !</div>';
+			$msg['pesan']='<div class="alert alert-success" role="alert">Informasi berhasil  di tambahkan</div>';
 			$msg['success'] = true;
 		}
 		echo json_encode($msg);
@@ -87,7 +87,7 @@ class Main extends CI_Controller {
 			);
 		$result=$this->model_app->ubah_info($id,$data);
 		if ($result) {
-			$msg['pesan']='<div class="alert alert-success" role="alert">Informasi berhasil  di Update !</div>';
+			$msg['pesan']='<div class="alert alert-success" role="alert">Informasi berhasil  di Update</div>';
 			$msg['success'] = true;
 		}
 		echo json_encode($msg);
@@ -98,7 +98,7 @@ class Main extends CI_Controller {
 		$id=$this->input->post('id', TRUE);
 		$q=$this->model_app->hapus_info($id);
 		if ($q) {
-			$msg['pesan']='<div class="alert alert-success" role="alert">Informasi berhasil  di Di Hapus !</div>';
+			$msg['pesan']='<div class="alert alert-success" role="alert">Informasi berhasil  di Hapus</div>';
 			$msg['success'] = true;
 		}
 		echo json_encode($msg);

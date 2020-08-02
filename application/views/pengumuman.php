@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PMB AKN Nganjuk</title>
+    <title>PMB</title>
 
 
     <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">

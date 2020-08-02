@@ -71,7 +71,7 @@ class Pendaftaran extends CI_Controller {
 		$query=$this->model_admin->del_siswa($id);
 		if ($query) {
 			$msg['success'] = true;
-			$msg['pesan'] = '<div class="alert alert-success" role="alert">Siswa berhasil  di Hapus !</div>';	
+			$msg['pesan'] = '<div class="alert alert-success" role="alert">Siswa berhasil  di Hapus</div>';	
 		}
 		echo json_encode($msg);
 	}
@@ -96,7 +96,7 @@ class Pendaftaran extends CI_Controller {
 		$result=$this->model_admin->input_tes($id,$data);
 		if ($result) {
 			$msg['success'] = true;
-			$msg['pesan'] = '<div class="alert alert-success" role="alert">Nilai Berhasil Di masukan !</div>';	
+			$msg['pesan'] = '<div class="alert alert-success" role="alert">Nilai Berhasil Di masukan</div>';	
 		}
 		echo json_encode($msg);
 	}
@@ -111,7 +111,7 @@ class Pendaftaran extends CI_Controller {
 		$result=$this->model_admin->input_tes($id,$data);
 		if ($result) {
 			$msg['success'] = true;
-			$msg['pesan'] = '<div class="alert alert-success" role="alert">Nilai Berhasil Di Update !</div>';	
+			$msg['pesan'] = '<div class="alert alert-success" role="alert">Nilai Berhasil Di Update</div>';	
 		}
 		echo json_encode($msg);
 	}

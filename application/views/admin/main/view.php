@@ -70,7 +70,7 @@
           <div class="icon">
           <i class="fa fa-bullhorn"></i>
           </div>
-          <a href="<?= base_url('administrator/pengumuman')  ?>" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
+          <a href="<?= base_url('administrator/')  ?>" class="small-box-footer">Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
           </div>
           <!-- small box -->
           

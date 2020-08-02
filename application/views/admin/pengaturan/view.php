@@ -37,7 +37,7 @@
                   <div class="form-group">
                       <label for="" class="col-sm-2 control-label">Favicon</label>
                       <div class="col-sm-10">
-                          <input type="file" name="site_favicon" class="form-control" id="site_favicon" required>
+                          <input type="file" name="site_favicon" class="form-control" id="site_favicon">
                           <p></p>
                           <img src="<?php echo base_url().'assets/images/'.$site_favicon;?>" class="thumbnail" width="32">
                       </div>
@@ -46,7 +46,7 @@
                   <div class="form-group">
                       <label for="" class="col-sm-2 control-label">Logo</label>
                       <div class="col-sm-10">
-                          <input type="file" name="site_logo" class="form-control" id="site_logo" required>
+                          <input type="file" name="site_logo" class="form-control" id="site_logo" >
                           <p></p>
                           <img src="<?php echo base_url().'assets/images/'.$site_logo;?>" class="thumbnail" width="200">
                       </div>

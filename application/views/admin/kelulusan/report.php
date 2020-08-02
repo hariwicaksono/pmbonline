@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Bukti Pendfataran</title>
+	<title>Laporan Kelulusan</title>
 	
 	<link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
     <script src="<?php echo base_url('assets/js/jquery.js') ?>"></script>
@@ -20,7 +20,7 @@
 
 <body>
 	<div class="container">
-	<table width="100%" style="text-align: center; vertical-align: top; font-family border-spacing: 5px:serif; font-size: 15pt; color: #000088;">
+	<table width="100%" style="text-align: center; vertical-align: top; font-family border-spacing: 5px:serif; font-size: 16pt; color: #212121;">
 	<tr>		
 		<td width="100%">
 		<h4>Laporan Data Mahasiswa Baru Tahun Akademik <?=$thak_aktif->tahun_ajaran ?></h4>

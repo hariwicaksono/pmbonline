@@ -77,26 +77,9 @@ class Kelulusan extends CI_Controller {
 		//$pdf = $this->pdf->load();
 		$mpdf = new \Mpdf\Mpdf();
 
-        $header = '
-			        <table width="100%" style="border-bottom: 2px solid #000000; vertical-align: top; font-family:
-					serif; font-size: 9pt; color: #000088;"><tr>		
-					<td width="20%" align="right">
-					<div>
-						<img src="'.base_url('assets/ak.png').'" width="75px" />
-					</div></td>
-					<td width="80%" style="text-align: center;">
-						<h5>KEMENTERIAN RISET DAN TEKNOLOGI DAN PENDIDIKAN TINGGi</h5>
-						<h3>AKADEMI KOMUNITAS NEGERI NGANJUK</h3>
-						<h4>PDD POLITEKNIK NEGERI JEMBER</h4>
-						<h5>Jl. Gatot Subroto No. 2 Nganjuk Telp. (0358) 321483 email : aknganjuk@yahoo.com</h5>
-					</td>
-				</tr>
-				</table>
-				';
+        //$header = '';
 
-		$footer = '<table width="100%" style="border-top: 2px solid #000000; vertical-align: bottom; font-family: serif; font-size: 8pt;
-
-    color: #000000; font-weight: bold; font-style: italic;"><tr>
+		$footer = '<table width="100%" style="border-top: 2px solid #000000; vertical-align: bottom; font-family: serif; font-size: 8pt;color: #000000; font-weight: bold; font-style: italic;"><tr>
 
     <td width="33%"><span style="font-weight: bold; font-style: italic;">'.base_url().'</span></td>
 
@@ -106,7 +89,7 @@ class Kelulusan extends CI_Controller {
 
     </tr></table>';
 
-    $mpdf->SetHTMLHeader($header);
+    //$mpdf->SetHTMLHeader($header);
 	$mpdf->SetHTMLFooter($footer);
 
 
@@ -114,7 +97,7 @@ class Kelulusan extends CI_Controller {
             '', '', '', '',
             20, // margin_left
             20, // margin right
-            40, // margin top
+            20, // margin top
             20, // margin bottom
             10, // margin header
             12); // margin footer);

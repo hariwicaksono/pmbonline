@@ -53,17 +53,17 @@ class Home extends CI_Controller {
                 if ($cek) {
                         $config['upload_path']          = './photo/';
                         $config['allowed_types']        = 'jpg|png';
-                        $config['max_size']             = 200;
-                        $config['max_width']            = 1324;
-                        $config['max_height']           = 1068;
+                        $config['max_size']             = 10000;
+                        $config['max_width']            = 2000;
+                        $config['max_height']           = 2000;
 
                         $this->load->library('upload', $config);
 
                         if ( ! $this->upload->do_upload('userfile'))
                         {
-                                $this->session->set_flashdata('error_daftar', '<div class="alert alert-danger"><i class="icon fa-4x fa fa-warning"></i><br>
-                                                                <h3>Pilih Photo sesuai Aturan ! <i class="fa fa-fw fa-frown-o"></i> </h3>
-                                                                 </div>');
+                                $this->session->set_flashdata('error_daftar', '<div class="alert alert-danger">
+                                <h3><i class="icon fa fa-warning"></i> Pilih Foto sesuai yang diperbolehkan</h3>
+                                        </div>');
                                 redirect('home');
                         }
                         else
@@ -104,23 +104,23 @@ class Home extends CI_Controller {
                                     );
                                 $result=$this->model_app->register_siswa($data);
                                 if ($result) {
-                                       $this->session->set_flashdata('error_daftar', '<div class="alert alert-success  wow zoomInUp" data-wow-delay="300ms" data-wow-duration="1000ms"><i class="icon fa-4x fa fa-check-square-o"></i><br>
-                                            <h3>Selamat ! Pendaftaran Berhasil..! <i class="fa fa-fw fa-smile-o"></i>
-                                            <br>Silakan Cetak Bukti Pendaftaran ! <a href="'.base_url('home/cetak_bukti/'.$nisn.'').'" target="_blank">Di Sini</a></h3>
+                                       $this->session->set_flashdata('error_daftar', '<div class="alert alert-success  wow zoomInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
+                                            <h3><i class="icon fa fa-check-square-o"></i> Selamat!, Pendaftaran Berhasil.
+                                            <br>Silakan Cetak Bukti Pendaftaran <a href="'.base_url('home/cetak_bukti/'.$nisn.'').'" target="_blank">Disini</a></h3>
                                              </div>');
                                 }else{
-                                        $this->session->set_flashdata('error_daftar', '<div class="alert alert-danger wow zoomInUp" data-wow-delay="300ms" data-wow-duration="1000ms"><i class="icon fa-4x fa fa-close "></i><br>
-                                            <h3>Masalah Pendaftaran ! <i class="fa fa-fw fa-frown-o"></i>
+                                        $this->session->set_flashdata('error_daftar', '<div class="alert alert-danger wow zoomInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
+                                            <h3><i class="icon fa fa-close "></i> Masalah Pendaftaran!
                                            </h3>
                                              </div>');
                                 }
                                 redirect('home');
                         }
                 }else{
-                        $this->session->set_flashdata('error_daftar', '<div class="alert alert-danger  wow zoomInUp" data-wow-delay="300ms" data-wow-duration="1000ms"><i class="icon fa-4x fa fa-warning"></i><br>
-                                                                <h3>Maaf, NISN Sudah Terdaftar ! Tidak Bisa daftar lagi ! <i class="fa fa-fw fa-frown-o"></i>
-                                                                <br>Apakah Anda Lupa Mencetak Bukti Pendaftaran ? <br><a href="'.base_url('home/cetak_bukti/'.$nisn.'').'" target="_blank">Cetak kembali bukti pendaftaran..!</a></h3>
-                                                                 </div>');
+                        $this->session->set_flashdata('error_daftar', '<div class="alert alert-danger  wow zoomInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
+                        <h3><i class="icon fa fa-warning"></i> Maaf, NISN Sudah Terdaftar, Tidak Bisa Mendaftar ulang.
+                        <br>Apakah Anda Lupa Mencetak Bukti Pendaftaran? <br><a href="'.base_url('home/cetak_bukti/'.$nisn.'').'" target="_blank">Cetak kembali bukti pendaftaran</a></h3>
+                                </div>');
                         redirect('home');
                 }
 		

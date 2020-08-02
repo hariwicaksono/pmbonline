@@ -27,10 +27,8 @@ class Login extends CI_Controller {
         else
         {
         	$this->session->set_flashdata('greeting', '<div id="greeting" class="callout callout-success">
-									        <h4>Selamat Datang , Admin !</h4>
-
-									        <p>Bagaimana kabar Anda hari ini ? Semoga hari Anda menyenangkan..!!</p>
-									      </div>');
+				<strong>Selamat Datang dihalaman Administrator PMB</strong>
+			</div>');
         	redirect('administrator/main');
         }
 	}

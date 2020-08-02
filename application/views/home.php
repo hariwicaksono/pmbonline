@@ -45,12 +45,14 @@
   </a>
 </div>
 
-<div class="alert alert-<?php echo $site_theme;?> alert-dismissible fade show mb-0" role="alert">
+<div class="alert alert-<?php echo $site_theme;?> alert-dismissible fade show" role="alert">
 <strong><i class="fa fa-graduation-cap" aria-hidden="true"></i> Info Gelombang</strong> Penerimaan Mahasiswa Baru Tahun Akademik <?=$thak->tahun_ajaran ?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
+
+<?php echo $this->session->flashdata('error_daftar'); ?>
 
     <section id="intro" class="bg-white py-4">
 
@@ -160,7 +162,7 @@
             <div class="row wow fadeInUp" data-wow-delay="100ms" data-wow-duration="700ms">
                 <div class="col-lg-12">
                 <h1 class="mb-4 text-center">Alur Pendaftaran</h1>
-                <img src="<?=base_url('assets/alur.png')  ?>" class="img-responsive img-thumbnail" alt="">
+                <img src="<?=base_url('assets/images/alur-maba.png')  ?>" class="img-responsive img-thumbnail" alt="">
 
             	</div>	
             </div>
@@ -168,7 +170,7 @@
 	</section>
 
     <section id="daftar" class="bg-light py-4">
-	<?php echo $this->session->flashdata('error_daftar'); ?>
+	
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms" data-wow-duration="700ms">
@@ -182,6 +184,19 @@
 					<?php else: ?>
 					<hr/>
 					<?=form_open_multipart('home/daftar','class=""') ?>
+					<div class="form-group row">
+							<label class="col-sm-2 col-form-label">Pilihan Prodi</label>
+							<div class="col-sm-10" style="text-align:left">
+								<?php foreach ($prodi as $prodi): ?>
+								<div class="radio">
+									<label>
+										<input type="radio" name="prodi" value="<?=$prodi->kode_prodi ?>" required>
+										<?=$prodi->jenjang ?> <?=$prodi->nama_prodi ?>
+									</label>
+								</div>
+								<?php endforeach; ?>
+							</div>
+						</div>
 						<div class="form-group row">
 							<label class="col-sm-2 col-form-label">NISN</label>
 							<div class="col-sm-10">
@@ -257,24 +272,12 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label class="col-sm-2 col-form-label">Nilai UNAS</label>
+							<label class="col-sm-2 col-form-label">Nilai UN</label>
 							<div class="col-sm-2">
 								<input type="nilai" name="nilai_un" class="form-control" data-mask="99.99" placeholder="00.00" required>
 							</div>
 						</div>
-						<div class="form-group row">
-							<label class="col-sm-2 col-form-label">Pilihan Prodi</label>
-							<div class="col-sm-10" style="text-align:left">
-								<?php foreach ($prodi as $prodi): ?>
-								<div class="radio">
-									<label>
-										<input type="radio" name="prodi" value="<?=$prodi->kode_prodi ?>" required>
-										<?=$prodi->jenjang ?> <?=$prodi->nama_prodi ?>
-									</label>
-								</div>
-								<?php endforeach; ?>
-							</div>
-						</div>
+						
 						<div class="form-group row">
 							<label class="col-sm-2 col-form-label">Foto</label>
 							<div class="col-sm-10" style="text-align:left">
@@ -294,8 +297,8 @@
 						<hr/>
 						<div class="form-group row" style="text-align:left">
 							<div class="col-sm-offset-2 col-sm-10">
-								<button type="submit" class="btn btn-primary">Simpan Pendaftaran</button>
-								<button type="reset" class="btn btn-light">Batalkan</button>
+								<button type="submit" class="btn btn-primary btn-lg">DAFTAR</button>
+								<button type="reset" class="btn btn-light btn-lg">Batal</button>
 							</div>
 						</div>
 					<?=form_close()  ?>
@@ -318,7 +321,9 @@
 
                 <div class="col-lg-8" id="map">	
 					<div class="table-responsive">
+					<!-- Google Maps IFrame -->
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2030203.7233617385!2d105.70644273125!3d-6.362763799999991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec1a804e8b85%3A0xd7bf80e1977cea07!2sUniversitas%20Indonesia!5e0!3m2!1sid!2sid!4v1594195056748!5m2!1sid!2sid" width="700" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+					<!-- -->
 					</div>
                 </div>
 				 <div class="col-lg-4">	

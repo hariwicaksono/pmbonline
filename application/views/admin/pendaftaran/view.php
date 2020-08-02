@@ -349,15 +349,15 @@
             type: 'POST', // Tentukan type nya POST atau GET
             data:{id:id}, // Set data yang akan dikirim
             success: function(response){ // Ketika proses pengiriman berhasil
-              //var response = JSON.parse(response);
-              console.log(response);
+              var response = JSON.parse(response);
+              //console.log(response);
               show_pendaftar();
               // show_jenjang();
-              //   if (response.success==true){
-              //    $("#pesan-sukses").html(response.pesan).fadeIn().delay(3000).slideUp();
-              // }else{
-              //   alert("Masalah menghapus Data")
-              // }
+                if (response.success==true){
+                  $("#pesan-sukses").html(response.pesan).fadeIn().delay(3000).slideUp();
+              }else{
+                 alert("Masalah menghapus Data")
+               }
 
             },
             error: function (xhr, ajaxOptions, thrownError) { // Ketika terjadi error

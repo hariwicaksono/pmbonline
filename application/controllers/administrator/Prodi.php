@@ -43,12 +43,12 @@ class Prodi extends CI_Controller {
 			
 			$q=$this->model_admin->auto_insert($table,$data);
 			if ($q) {
-				$msg['pesan']='<div class="alert alert-success" role="alert"><i class="fa fa-fw fa-check-square-o"></i> Prodi berhasil  di tambahkan !</div>';
+				$msg['pesan']='<div class="alert alert-success" role="alert"><i class="fa fa-fw fa-check-square-o"></i> Prodi berhasil  di tambahkan</div>';
 				$msg['success'] = true;
 			}
 		}else{
 			$msg['success'] = false;
-			$msg['pesan']='<div class="alert alert-danger" role="alert"><i class="fa fa-fw fa-times"></i> Kode Prodi sudah digunakan , Harap coba yang lain !</div>';
+			$msg['pesan']='<div class="alert alert-danger" role="alert"><i class="fa fa-fw fa-times"></i> Kode Prodi sudah digunakan, gunakan kode yang lain</div>';
 		}
 
 		echo json_encode($msg);
@@ -100,7 +100,7 @@ class Prodi extends CI_Controller {
 		$result=$this->model_admin->ubah_prodi($id,$data);
 		if ($result) {
 			$msg['success'] = true;
-			$msg['pesan'] = '<div class="alert alert-success" role="alert"><i class="fa fa-fw fa-check-square-o"></i> Prodi berhasil  di Update !</div>';
+			$msg['pesan'] = '<div class="alert alert-success" role="alert"><i class="fa fa-fw fa-check-square-o"></i> Prodi berhasil  di Update</div>';
 		}
 		echo json_encode($msg);
 	}
@@ -111,7 +111,7 @@ class Prodi extends CI_Controller {
 		$q=$this->model_admin->hapus_prodi($id);
 		if ($q) {
 			$msg['success'] = true;
-			$msg['pesan'] = '<div class="alert alert-success" role="alert"><i class="fa fa-fw fa-check-square-o"></i> Prodi berhasil  di Hapus !</div>';
+			$msg['pesan'] = '<div class="alert alert-success" role="alert"><i class="fa fa-fw fa-check-square-o"></i> Prodi berhasil  di Hapus</div>';
 		}
 		echo json_encode($msg);
 	}
