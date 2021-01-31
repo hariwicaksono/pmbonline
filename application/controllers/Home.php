@@ -13,6 +13,8 @@ class Home extends CI_Controller {
         $site_info = $this->db->get('pengaturan', 1)->row();
         $data['site_name'] = $site_info->site_name;
         $data['site_title'] = $site_info->site_title;
+        $data['site_address'] = $site_info->site_address;
+        $data['site_alurpmb'] = $site_info->site_alurpmb;
         $data['site_logo'] = $site_info->site_logo;
         $data['site_favicon'] = $site_info->site_favicon;
         $data['site_phone'] = $site_info->site_phone;
@@ -22,6 +24,7 @@ class Home extends CI_Controller {
         $data['site_youtube'] = $site_info->site_youtube;
         $data['site_instagram'] = $site_info->site_instagram;
         $data['site_theme'] = $site_info->site_theme;
+        $data['site_google_maps'] = $site_info->site_google_maps;
         $kode_thak=$this->model_app->kode_thak_aktif();
         $data['informasi']=$this->model_app->get_all_info($kode_thak);
         $data['thak']=$this->model_admin->ambil_thak_aktif();

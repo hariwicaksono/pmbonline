@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-fixed-top shadow border-top border-<?php echo $site_theme;?>">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-fixed-top shadow">
 <div class="container">
 
     <a class="navbar-brand page-scroll" href="#page-top"><?php echo $site_name;?></a>

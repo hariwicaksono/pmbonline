@@ -58,9 +58,9 @@
 
         <div class="container">
 		
-            <div class="row wow fadeInUp" data-wow-delay="100ms" data-wow-duration="700ms">
+            <div class="row wow fadeInUp" data-wow-delay="100ms" data-wow-duration="500ms">
 			<div class="col-lg-12">
-			<h1 class="mb-4 text-center">Informasi</h1>
+			<h1 class="h2 mb-3 text-center">Informasi</h1>
 			</div>
 			<div class="col-lg-7">
 
@@ -140,9 +140,9 @@
 
     <section id="prodi" class="bg-light py-4">
         <div class="container">
-            <div class="row wow fadeInUp" data-wow-delay="100ms" data-wow-duration="700ms">
+            <div class="row wow fadeInUp" data-wow-delay="100ms" data-wow-duration="500ms">
                 <div class="col-lg-12">
-					<h1 class="mb-4 text-center">Program Studi</h1>
+					<h1 class="h2 mb-3 text-center">Program Studi</h1>
 					<div class="card-columns">
 					<?php foreach ($prodi1 as $prodi1): ?>
 						<div class="card">	
@@ -159,10 +159,10 @@
 
     <section id="alur" class="bg-white py-4">
         <div class="container">
-            <div class="row wow fadeInUp" data-wow-delay="100ms" data-wow-duration="700ms">
+            <div class="row wow fadeInUp" data-wow-delay="100ms" data-wow-duration="500ms">
                 <div class="col-lg-12">
-                <h1 class="mb-4 text-center">Alur Pendaftaran</h1>
-                <img src="<?=base_url('assets/images/alur-maba.png')  ?>" class="img-responsive img-thumbnail" alt="">
+                <h1 class="h2 mb-3 text-center">Alur Pendaftaran</h1>
+                <img src="<?php echo base_url('assets/images/').$site_alurpmb;?>" class="img-responsive img-thumbnail" alt="">
 
             	</div>	
             </div>
@@ -173,8 +173,8 @@
 	
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms" data-wow-duration="700ms">
-                <h1 class="mb-3">Formulir Pendaftaran</h1>
+                <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms" data-wow-duration="500ms">
+                <h1 class="h2 mb-3">Formulir Pendaftaran</h1>
                 	<?php if ($cek_reg === 'Ditutup'): ?>
 
 					      <div class="alert alert-danger text-center">
@@ -297,8 +297,8 @@
 						<hr/>
 						<div class="form-group row" style="text-align:left">
 							<div class="col-sm-offset-2 col-sm-10">
-								<button type="submit" class="btn btn-primary btn-lg">DAFTAR</button>
-								<button type="reset" class="btn btn-light btn-lg">Batal</button>
+								<button type="submit" class="btn btn-primary"><i class="fa fa-send"></i> DAFTAR</button>
+								<button type="reset" class="btn btn-light">RESET</button>
 							</div>
 						</div>
 					<?=form_close()  ?>
@@ -312,25 +312,30 @@
 
     <section id="contact" class="bg-dark text-white py-5">
         <div class="container">
-            <div class="row wow fadeInUp" data-wow-delay="100ms" data-wow-duration="700ms">
+            <div class="row wow fadeInUp" data-wow-delay="100ms" data-wow-duration="500ms">
 			   <div class="col-md-12">
-			<h1 class="text-white mb-3">Panitia Pendaftaran</h1>	
+			<h1 class="h2 text-white mb-3">Panitia Pendaftaran</h1>	
 			
-				<h5 class="text-white mb-3">Untuk informasi lebih lanjut, hubungi Panitia Pendaftaran pada:</h5>
+				<h5 class="text-white mb-3">Untuk informasi lebih lanjut, hubungi Panitia Pendaftaran kami di:</h5>
 			</div>
 
-                <div class="col-lg-8" id="map">	
-					<div class="table-responsive">
+                <div class="col-md-7" id="map">	
+				<style type="text/css" media="screen">
+					iframe {
+						width: 100%;
+						max-height: 350px;
+					}
+				</style>
 					<!-- Google Maps IFrame -->
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2030203.7233617385!2d105.70644273125!3d-6.362763799999991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec1a804e8b85%3A0xd7bf80e1977cea07!2sUniversitas%20Indonesia!5e0!3m2!1sid!2sid!4v1594195056748!5m2!1sid!2sid" width="700" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+					<?php echo $site_google_maps;?>
 					<!-- -->
-					</div>
                 </div>
-				 <div class="col-lg-4">	
-				 <h3 class="text-white">Kontak</h3>
-				<p><i class="fa fa-phone"></i> Telp.: <?php echo $site_phone;?></p>
-				<p><i class="fa fa-envelope-o"></i> Email: <?php echo $site_email;?></p>
-				<p><i class="fa fa-home"></i> Web: <a class="text-light" href="http://<?php echo $site_website;?>"><?php echo $site_website;?></a></p>
+				 <div class="col-md-5">	
+				 <h4 class="text-white"><?php echo $site_title;?></h4>
+				 <h6 class="mb-3"><?php echo $site_address;?></h6>
+				<p><i class="fa fa-phone"></i> Telp.: <?php echo $site_phone;?><br/>
+				<i class="fa fa-envelope-o"></i> Email: <?php echo $site_email;?><br/>
+				<i class="fa fa-home"></i> Web: <a class="text-light" href="http://<?php echo $site_website;?>"><?php echo $site_website;?></a></p>
 				<ul class="list-unstyled list-inline">
                     <li class="list-inline-item">
                         <a class="text-primary" href="<?php echo $site_facebook;?>"><i class="fa fa-facebook-square fa-2x"></i></a>

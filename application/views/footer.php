@@ -13,6 +13,9 @@
 
 	      $(".date-picker").datepicker( {
           format: " yyyy-mm-dd", // Notice the Extra space at the beginning
+		  todayBtn: true,
+		  todayHighlight: true,
+		  language: 'id',
           autoclose: true
      		 });
 

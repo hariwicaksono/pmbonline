@@ -19,6 +19,7 @@ class Pengaturan extends CI_Controller {
 		$data['site_name'] = $site_info->site_name;
 		$data['site_title'] = $site_info->site_title;
 		$data['site_address'] = $site_info->site_address;
+		$data['site_alurpmb'] = $site_info->site_alurpmb;
 		$data['site_favicon'] = $site_info->site_favicon;
 		$data['site_logo'] = $site_info->site_logo;
 		$data['site_facebook'] = $site_info->site_facebook;
@@ -28,6 +29,7 @@ class Pengaturan extends CI_Controller {
 		$data['site_email'] = $site_info->site_email;
 		$data['site_website'] = $site_info->site_website;
 		$data['site_theme'] = $site_info->site_theme;
+		$data['site_google_maps'] = $site_info->site_google_maps;
 		$data['content']=$this->load->view('admin/pengaturan/view',$data, TRUE);
 		$this->load->view('admin/home', $data);
 	}
@@ -43,6 +45,8 @@ class Pengaturan extends CI_Controller {
 		$site_facebook=$this->input->post('site_facebook', TRUE);
 		$site_instagram=$this->input->post('site_instagram', TRUE);
 		$site_youtube=$this->input->post('site_youtube', TRUE);
+		$site_theme=$this->input->post('site_theme', TRUE);
+		$site_google_maps=$this->input->post('site_google_maps');
 
 		$data=array(
 			'site_name'=>$site_name,
@@ -53,7 +57,9 @@ class Pengaturan extends CI_Controller {
 			'site_website'=>$site_website,
 			'site_facebook'=>$site_facebook,
 			'site_instagram'=>$site_instagram,
-			'site_youtube'=>$site_youtube
+			'site_youtube'=>$site_youtube,
+			'site_theme'=>$site_theme,
+			'site_google_maps'=>$site_google_maps
 			);
 	
 		$config['upload_path'] = './assets/images/';
@@ -69,6 +75,11 @@ class Pengaturan extends CI_Controller {
 		if ($this->upload->do_upload('site_logo')){
 			$logo = $this->upload->data();
 			$data['site_logo']=$logo['file_name'];
+		}
+
+		if ($this->upload->do_upload('site_alurpmb')){
+			$logo = $this->upload->data();
+			$data['site_alurpmb']=$logo['file_name'];
 		}
 
 		$result=$this->model_admin->update_pengaturan($id,$data);

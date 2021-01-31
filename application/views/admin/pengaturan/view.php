@@ -74,6 +74,15 @@
                   </div>
 
                   <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">Alur Pendaftaran</label>
+                      <div class="col-sm-10">
+                          <input type="file" name="site_alurpmb" class="form-control" id="site_alurpmb" >
+                          <p></p>
+                          <img src="<?php echo base_url().'assets/images/'.$site_alurpmb;?>" class="thumbnail" width="200">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
                       <label for="" class="col-sm-2 control-label">Link Facebook</label>
                       <div class="col-sm-10">
                           <input type="text" name="site_facebook" class="form-control" id="site_facebook" value="<?php echo $site_facebook;?>">
@@ -130,6 +139,13 @@
                   </select>
 
                     </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">Google Maps</label>
+                      <div class="col-sm-10">
+                          <textarea name="site_google_maps" rows="5" class="form-control" placeholder="Kode dari Google Map"><?php echo $site_google_maps ?></textarea>
+                      </div>
                   </div>
 
                   <div class="form-group">

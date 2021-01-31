@@ -15,12 +15,13 @@
 	<link href="<?php echo base_url('assets/css/jasny-bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/scrolling-nav.css') ?>" rel="stylesheet">
 	<link href="<?php echo base_url('assets/css/animate.css') ?>" rel="stylesheet">
-	<link href="<?php echo base_url('assets/css/styles.css?id=123') ?>" rel="stylesheet">
-
+	<link href="<?php echo base_url('assets/css/styles.css') ?>" rel="stylesheet">
+	<link href="<?php echo base_url('assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css') ?>" rel="stylesheet">
 
     <script type="text/javascript" src="<?php echo base_url('vendor/components/jquery/jquery.min.js') ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/datepicker/bootstrap-datepicker.min.js')  ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')  ?>"></script>
+	<script type="text/javascript" src="<?php echo base_url('assets/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.id.min.js')  ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url('assets/js/jasny-bootstrap.min.js') ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.easing.min.js') ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/scrolling-nav.js') ?>"></script>
