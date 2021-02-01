@@ -1,12 +1,12 @@
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1><i class="fa fa-dashboard"></i>
-        Jenjang
+        Master Jenjang
         <small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
        <li><a href="<?=base_url('administrator/main') ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Jenjang</li>
+        <li class="active">Master Jenjang</li>
       </ol>
     </section>
 
@@ -27,7 +27,7 @@
             <div class="box-body">
             <div id="pesan-sukses">
             </div>
-              <button type="button" id="add-jenjang" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal_add"><i class="fa fa-fw fa-plus"></i> Tambah Jenjang</button>
+              <button type="button" id="add-jenjang" class="btn btn-primary" data-toggle="modal" data-target="#modal_add"><i class="fa fa-fw fa-plus"></i> Tambah Jenjang</button>
               <table class="table table-hover table-bordered table-responsive">
                 <thead>
                   <tr>
@@ -128,8 +128,8 @@
                         '<td>'+no+'</td>'+
                         '<td>'+data[i].jenjang+'</td>'+
                         '<td>'+
-                          '<a href="javascript:void(0);" class="btn btn-success btn-xs" onclick="edit('+data[i].kode_jenjang+')"><i class="fa fa-edit"></i> Edit</a>  '+
-                          '<a href="javascript:void(0);" class="btn btn-danger btn-xs"  onclick="hapus('+data[i].kode_jenjang+')"><i class="fa fa-trash-o"></i> Delete</a>'+
+                          '<a href="javascript:void(0);" class="btn btn-primary btn-sm" onclick="edit('+data[i].kode_jenjang+')"><i class="fa fa-edit"></i> Edit</a>  '+
+                          '<a href="javascript:void(0);" class="btn btn-danger btn-sm"  onclick="hapus('+data[i].kode_jenjang+')"><i class="fa fa-trash-o"></i> Hapus</a>'+
                         '</td>'+
                         '</tr>';
                   no++;

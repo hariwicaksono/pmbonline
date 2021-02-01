@@ -61,8 +61,8 @@ class Tes extends CI_Controller {
 						<td>'.$data->mulai.'</td>
 						<td>'.$data->sampai.'</td>
 						<td>
-						<a href="javascript:void(0);" class="btn btn-success btn-xs" onclick="edit('.$data->id.')"><i class="fa fa-edit"></i> Edit</a>
-						<a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="hapus('.$data->id.')"><i class="fa fa-trash"></i> Hapus</a> 
+						<a href="javascript:void(0);" class="btn btn-primary btn-sm" onclick="edit('.$data->id.')"><i class="fa fa-edit"></i> Edit</a>
+						<a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="hapus('.$data->id.')"><i class="fa fa-trash"></i> Hapus</a> 
 						</td>
 				</tr>';
 				$no++;

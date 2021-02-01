@@ -31,10 +31,10 @@
 				foreach ($q as $data) {
 
 					if ($data->verifikasi_tgl==0) {
-						$tes='<a href="'.base_url('administrator/verifikasi/do_verifikasi/'.$data->id_daftar.'').'" class="btn btn-danger btn-xs" title="Lakukan Verifikasi"><i class="fa fa-exclamation-triangle"></i> Belum Verifikasi</a>';
+						$tes='<a href="'.base_url('administrator/verifikasi/do_verifikasi/'.$data->id_daftar.'').'" class="btn btn-danger btn-sm" title="Lakukan Verifikasi"><i class="fa fa-exclamation-triangle"></i> Belum Verifikasi</a>';
 					}else{
-						$tes='<a href="'.base_url('administrator/verifikasi/do_verifikasi/'.$data->id_daftar.'').'" class="btn btn-primary btn-xs" title="Edit Verifikasi"><i class="fa fa-check-square-o"></i> Sudah Verifikasi</a>
-							<a href="'.base_url('administrator/verifikasi/cetak_verifikasi/'.$data->id_daftar.'').'" class="btn bg-maroon btn-xs" title="Cetak Kartu Ujian" target="_blank"><i class="fa fa-print"></i> Cetak Kartu Ujian</a>';
+						$tes='<a href="'.base_url('administrator/verifikasi/do_verifikasi/'.$data->id_daftar.'').'" class="btn btn-primary btn-sm" title="Edit Verifikasi"><i class="fa fa-check-square-o"></i> Sudah Verifikasi</a>
+							<a href="'.base_url('administrator/verifikasi/cetak_verifikasi/'.$data->id_daftar.'').'" class="btn bg-maroon btn-sm" title="Cetak Kartu Ujian" target="_blank"><i class="fa fa-print"></i> Cetak Kartu Ujian</a>';
 					}
 
 					if ($data->fc_ijazah == 1) {

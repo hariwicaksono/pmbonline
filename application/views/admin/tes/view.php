@@ -6,12 +6,12 @@
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1><i class="fa fa-dashboard"></i>
-        Jadwal
+        Jadwal Test
         <small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Jadwal</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Jadwal Test</li>
       </ol>
     </section>
 
@@ -26,7 +26,7 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-tags"></i> Jadwal</h3>
+              <h3 class="box-title"><i class="fa fa-tags"></i> Jadwal Test</h3>
               <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
@@ -37,7 +37,7 @@
             <div class="box-body">
               <div id="pesan-sukses">
               </div>
-              <button type="button" id="add_button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal_tes"><i class="fa fa-fw fa-plus"></i> Tambah Jadwal</button>
+              <button type="button" id="add_button" class="btn btn-primary" data-toggle="modal" data-target="#modal_tes"><i class="fa fa-fw fa-plus"></i> Tambah Jadwal</button>
               <table class="table table-hover table-bordered table-responsive">
                 <thead>
                   <tr>
@@ -82,7 +82,7 @@
                       <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                       </div>
-                      <input type="text" style="text-transform:uppercase" class="form-control" name="tgl_tes" id="tgl_tes">
+                      <input type="text" style="text-transform:uppercase" class="form-control" name="tgl_tes" id="tgl_tes" autocomplete="off">
                     </div>
                     <!-- /.input group -->
                   </div>

@@ -55,17 +55,19 @@ class Home extends CI_Controller {
                 $cek=$this->cek_nisn($nisn);
                 if ($cek) {
                         $config['upload_path']          = './photo/';
-                        $config['allowed_types']        = 'jpg|png';
-                        $config['max_size']             = 10000;
-                        $config['max_width']            = 2000;
-                        $config['max_height']           = 2000;
+                        $config['allowed_types']        = 'jpg|jpeg|png|bmp|gif';
+                        $config['max_size']             = 5000;
+                        $config['max_width']            = 5000;
+                        $config['max_height']           = 5000;
 
                         $this->load->library('upload', $config);
+                        $this->upload->initialize($config);
 
-                        if ( ! $this->upload->do_upload('userfile'))
+                        if (!$this->upload->do_upload('userfile'))
                         {
+                               
                                 $this->session->set_flashdata('error_daftar', '<div class="alert alert-danger">
-                                <h3><i class="icon fa fa-warning"></i> Pilih Foto sesuai yang diperbolehkan</h3>
+                                <i class="icon fa fa-exclamation-triangle"></i> Perhatian! '.$this->upload->display_errors().'
                                         </div>');
                                 redirect('home');
                         }
@@ -108,21 +110,21 @@ class Home extends CI_Controller {
                                 $result=$this->model_app->register_siswa($data);
                                 if ($result) {
                                        $this->session->set_flashdata('error_daftar', '<div class="alert alert-success  wow zoomInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
-                                            <h3><i class="icon fa fa-check-square-o"></i> Selamat!, Pendaftaran Berhasil.
-                                            <br>Silakan Cetak Bukti Pendaftaran <a href="'.base_url('home/cetak_bukti/'.$nisn.'').'" target="_blank">Disini</a></h3>
+                                           <strong><i class="icon fa fa-check-square-o"></i> Selamat!, Pendaftaran Berhasil.</strong>
+                                            <br>Silakan Cetak Bukti Pendaftaran <a href="'.base_url('home/cetak_bukti/'.$nisn.'').'" target="_blank">Disini</a>
                                              </div>');
                                 }else{
                                         $this->session->set_flashdata('error_daftar', '<div class="alert alert-danger wow zoomInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
-                                            <h3><i class="icon fa fa-close "></i> Masalah Pendaftaran!
-                                           </h3>
+                                           <i class="icon fa fa-close "></i> Masalah Pendaftaran!
+                                           
                                              </div>');
                                 }
                                 redirect('home');
                         }
                 }else{
                         $this->session->set_flashdata('error_daftar', '<div class="alert alert-danger  wow zoomInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
-                        <h3><i class="icon fa fa-warning"></i> Maaf, NISN Sudah Terdaftar, Tidak Bisa Mendaftar ulang.
-                        <br>Apakah Anda Lupa Mencetak Bukti Pendaftaran? <br><a href="'.base_url('home/cetak_bukti/'.$nisn.'').'" target="_blank">Cetak kembali bukti pendaftaran</a></h3>
+                        <i class="icon fa fa-warning"></i> Maaf, NISN Sudah Terdaftar, Tidak Bisa Mendaftar ulang.
+                        <br>Apakah Anda Lupa Mencetak Bukti Pendaftaran? <br><a href="'.base_url('home/cetak_bukti/'.$nisn.'').'" target="_blank">Cetak kembali bukti pendaftaran</a>
                                 </div>');
                         redirect('home');
                 }
@@ -141,33 +143,20 @@ class Home extends CI_Controller {
 
     public function cetak_bukti($id)
     {
+        $this->load->library('pdfgenerator');
         $site_info = $this->db->get('pengaturan', 1)->row();
-        $d['site_name'] = $site_info->site_name;
-        $d['site_title'] = $site_info->site_title;
-        $d['site_logo'] = $site_info->site_logo;
-        $d['site_address'] = $site_info->site_address;
-        $d['site_phone'] = $site_info->site_phone;
-        $d['site_email'] = $site_info->site_email;
+        $this->data['row'] = $site_info;
         $kode_thak=$this->model_app->kode_thak_aktif();
-        $d['data']=$this->model_app->cetak_form($id);
-        $d['jadwal']=$this->model_admin->get_all_tes($kode_thak);
-       // load mPDF library
-        //$this->load->library('m_pdf');
-
-       
+        $this->data['data']=$this->model_app->cetak_form($id);
+        $this->data['jadwal']=$this->model_admin->get_all_tes($kode_thak);
+   
         $pdfFilePath ="registrasi-".time()."-download.pdf";
- 
+        $paper = 'A4';
+        $orientation = "portrait";
         
-        //actually, you can pass mPDF parameter on this load() function
-        //$pdf = $this->m_pdf->load();
-        $mpdf = new \Mpdf\Mpdf();
-        $html=$this->load->view('bukti_reg',$d , true);
+        $html=$this->load->view('bukti_reg', $this->data, true);
 
-        //generate the PDF!
-        $mpdf->WriteHTML($html);
-        
-        //offer it to user via browser download! (The PDF won't be saved on your server HDD)
-        $mpdf->Output($pdfFilePath, "I");
+        $this->pdfgenerator->generate($html, $pdfFilePath, $paper, $orientation);
 
     }
 

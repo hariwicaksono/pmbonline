@@ -31,9 +31,9 @@ class Pendaftaran extends CI_Controller {
 			foreach ($q as $data) {
 
 				if ($data->input_tes_tgl == 0 OR $data->nilai_tes == 0) {
-					$tes='<a href="javascript:void(0);" class="btn btn-danger btn-xs" title="Masukan Nilai Tes" onclick="input_tes('.$data->id_daftar.')"><i class="fa fa-exclamation-triangle"></i> Belum Tes</a>';
+					$tes='<a href="javascript:void(0);" class="btn btn-danger btn-sm" title="Masukan Nilai Tes" onclick="input_tes('.$data->id_daftar.')"><i class="fa fa-exclamation-triangle"></i> Belum Tes</a>';
 				}else{
-					$tes='<a href="javascript:void(0);" class="btn btn-success btn-xs" title="Edit Tes" onclick="edit_tes('.$data->id_daftar.')"><i class="fa fa-check-square-o"></i> Sudah Tes</a>';
+					$tes='<a href="javascript:void(0);" class="btn btn-success btn-sm" title="Edit Tes" onclick="edit_tes('.$data->id_daftar.')"><i class="fa fa-check-square-o"></i> Sudah Tes</a>';
 				}
 				$html.='<tr>
 						<td>'.$no.'</td>
@@ -42,8 +42,8 @@ class Pendaftaran extends CI_Controller {
 						<td>'.$data->sekolah.'</td>
 						<td>'.$data->jenjang.' '.$data->nama_prodi.'</td>
 						<td>
-							<a href="javascript:void(0);" class="btn btn-success btn-xs" title="Lihat Detail" onclick="detail('.$data->id_daftar.')"><i class="fa fa-eye"></i></a>
-							<a href="javascript:void(0);" class="btn btn-danger btn-xs" title="Hapus" onclick="hapus('.$data->id_daftar.')"><i class="fa fa-trash"></i></a> 
+							<a href="javascript:void(0);" class="btn btn-primary btn-sm" title="Lihat Detail" onclick="detail('.$data->id_daftar.')"><i class="fa fa-eye"></i></a>
+							<a href="javascript:void(0);" class="btn btn-danger btn-sm" title="Hapus" onclick="hapus('.$data->id_daftar.')"><i class="fa fa-trash"></i></a> 
 						</td>
 						<td>'.$tes.'</td>
 				</tr>';

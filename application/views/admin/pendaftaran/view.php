@@ -200,7 +200,7 @@
                   </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-fw fa-times"></i> Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-fw fa-times"></i> Tutup</button>
               </div>
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->

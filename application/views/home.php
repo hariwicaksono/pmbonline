@@ -45,14 +45,9 @@
   </a>
 </div>
 
-<div class="alert alert-<?php echo $site_theme;?> alert-dismissible fade show" role="alert">
-<strong><i class="fa fa-graduation-cap" aria-hidden="true"></i> Info Gelombang</strong> Penerimaan Mahasiswa Baru Tahun Akademik <?=$thak->tahun_ajaran ?>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-
+<div class="container mt-3">
 <?php echo $this->session->flashdata('error_daftar'); ?>
+</div>
 
     <section id="intro" class="bg-white py-4">
 
@@ -62,44 +57,13 @@
 			<div class="col-lg-12">
 			<h1 class="h2 mb-3 text-center">Informasi</h1>
 			</div>
-			<div class="col-lg-7">
 
-			<h4 class="mb-3">Jadwal Pendaftaran</h4>
-			<div class="table-responsive">
-            		<table class="table table-striped">
-            			<thead>
-            				<tr class="info">
-								<th>Gelombang</th>
-								<th>Keterangan</th>
-            				
-            					<th>Waktu</th>
-            					
-            				</tr>
-            			</thead>
-            			<tbody>
-            			<?php if ($jadwal_tes): ?>
-            					<?php foreach ($jadwal_tes as $tes): ?>
-            						<tr>
-										<td><?=$tes->nama_tes?></td>
-										<td><?=$tes->ket?></td>
-								       
-								       <td><?=$tes->mulai?> - <?=$tes->sampai?> </td>
-								        
-								    </tr>
-								<?php endforeach; ?>
-						<?php else: ?>
-							<tr>
-								<td colspan="4">Tidak Ada Jadwal</td>
-							</tr>
-						<?php endif; ?>
-            				
-            			</tbody>
-					</table>
-				</div>
+            <div class="col-md-12">
 
+			<div class="alert alert-<?php echo $site_theme;?>" role="alert">
+			<strong><i class="fa fa-graduation-cap" aria-hidden="true"></i> Info Pendaftaran!</strong> Saat ini <u><?=$thak->ket ?></u> Penerimaan Mahasiswa Baru Tahun Akademik <?=$thak->tahun_ajaran ?>
 			</div>
 
-                <div class="col-lg-5">
 				<div class="panel card border-<?php echo $site_theme;?> text-left">
 	            	<div class="panel-body card-body">
 						<h4 class="mb-3 text-<?php echo $site_theme;?>"><i class="fa fa-bullhorn" aria-hidden="true"></i> Informasi Terbaru</h4>
@@ -134,7 +98,9 @@
                   
 				</div>
                 
+
             </div>
+			
         </div>
     </section>
 
@@ -172,13 +138,14 @@
     <section id="daftar" class="bg-light py-4">
 	
         <div class="container">
+
             <div class="row">
                 <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms" data-wow-duration="500ms">
                 <h1 class="h2 mb-3">Formulir Pendaftaran</h1>
                 	<?php if ($cek_reg === 'Ditutup'): ?>
 
 					      <div class="alert alert-danger text-center">
-			                <h3><i class="icon fa fa-3x fa-warning"></i><br><strong>Maaf, Pendaftaran Belum Dibuka</strong></h3>
+			               <i class="icon fa fa-3x fa-warning"></i><br><strong>Maaf, Pendaftaran Belum Dibuka</strong>
 			              </div>
 
 					<?php else: ?>
@@ -282,14 +249,14 @@
 							<label class="col-sm-2 col-form-label">Foto</label>
 							<div class="col-sm-10" style="text-align:left">
 								<div class="fileinput fileinput-new" data-provides="fileinput">
-									<div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 250px; height: 150px;"></div>
+									<div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 250px; height: 150px;border: 1px solid #ddd"></div>
 									<div>
 										<span class="btn btn-default btn-file">
-											<span class="fileinput-new btn btn-outline-primary">Pilih gambar</span>
-											<span class="fileinput-exists btn btn-outline-primary">Ganti</span>
+											<span class="fileinput-new btn btn-outline-primary"><i class="fa fa-camera"></i> Pilih gambar</span>
+											<span class="fileinput-exists btn btn-outline-primary"><i class="fa fa-camera"></i> Ganti</span>
 											<input type="file" name="userfile" required>
 										</span>
-										<a href="#" class="btn btn-outline-danger fileinput-exists" data-dismiss="fileinput">Hapus</a>
+										<a href="#" class="btn btn-outline-danger fileinput-exists" data-dismiss="fileinput"><i class="fa fa-trash"></i> Hapus</a>
 									</div>
 								</div>
 							</div>

@@ -4,63 +4,51 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Bukti Pendaftaran</title>
-	
-	<link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
-	<link href="<?php echo base_url('assets/font-awesome/css/font-awesome.min.css') ?>" rel="stylesheet">
-    <script src="<?php echo base_url('assets/js/jquery.js') ?>"></script>
-    <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 
     <style type="text/css">
-
 	@page {
-
-  	margin-top: 3.5cm;
-
+  	margin-top: 1.5cm;
 	margin-bottom: 1.5cm;
-
-	header: myHeader1;
-
-	footer: myFooter;
-
 	}
+
+	h1, h2, h3, h4, h5, h6, p {
+   margin: 0;
+   padding: 0;
+}
 	 
 	td {
 	    padding-top: .20em;
 	    padding-bottom: .20em;
 	}
+
+	.table {
+  	border-collapse: collapse;
+	}
+
+	.table td, th {
+	border: 1px solid #999;
+	padding: 0.2rem;
+	}
+
 	</style>
 </head>
 
 <body>
-<htmlpageheader name="myHeader1" style="display:none">
+<htmlpageheader name="myHeader1">
 	<table width="100%" style="border-bottom: 2px solid #000000; vertical-align: top; font-family:
-		serif; font-size: 9pt; color: #111;"><tr>		
+		serif; font-size: 10pt; color: #111;margin-bottom: 10px"><tr>		
 		<td width="20%" align="center">
 		<div>
-			<img src="<?=base_url('assets/images/').$site_logo;?>" width="55px" />
+			<img src="<?=base_url('assets/images/').$row->site_logo;?>" width="80px" />
 		</div></td>
 		<td width="80%" style="text-align: left;">
-			<h2><strong><?php echo $site_title;?></strong></h2>
-			<h5><?php echo $site_address;?> Telp. <?php echo $site_phone;?> email: <?php echo $site_email;?></h5>
+			<h1><strong><?=$row->site_title;?></strong></h1>
+			<p><?=$row->site_address;?> Telp. <?=$row->site_phone;?> email: <?=$row->site_email;?></p>
 		</td>
 	</tr>
 	</table>
 </htmlpageheader>
-<htmlpagefooter name="myFooter" style="display:none">
 
-<table width="100%" style="border-top: 2px solid #000000; vertical-align: bottom; font-family: serif; font-size: 8pt;
-
-    color: #000000; font-weight: bold; font-style: italic;"><tr>
-
-    <td width="33%"><span style="font-weight: bold; font-style: italic;"><?=base_url() ?></span></td>
-
-    <td width="33%" align="center" style="font-weight: bold; font-style: italic;">{PAGENO}/{nbpg}</td>
-
-    <td width="33%" style="text-align: right; ">{DATE j-m-Y}</td>
-
-    </tr></table>
-
-</htmlpagefooter>
 	<div class="container">
 			<table width="100%" style="text-align: left; vertical-align: top; font-family border-spacing: 5px:
 			serif; font-size: 15pt; color: #111;">
@@ -70,7 +58,7 @@
 				<h4>Tahun Akademik <?=$data->tahun_ajaran ?></h4>
 				</td>
 				<td width="20%">
-					<img src="<?=base_url('photo/'.$data->foto.'') ?>" style="border:1px  solid #000000;" width="100px" />
+					
 				</td>
 			</tr>
 			</table>
@@ -171,12 +159,12 @@
 				</td>
 			</tr>		
 		</table>
+
 		<p>&nbsp;</p>
-		<!-- <div width="100%" style="text-align: center;">
-			<h3>Jadwal Tes</h3>
-		</div>
-		<p>&nbsp;</p> -->
-		<!-- <table class="table table-bordered table-hover">
+
+		<h4 style="margin-bottom: 5px">Jadwal Test</h4>
+
+		<table class="table" width="100%">
 			<thead>
 				<tr>
 					<th>Tes</th>
@@ -192,7 +180,7 @@
 				        <td><?=$tes->nama_tes?></td>
 				        <td><?=date('d-m-Y', strtotime($tes->tgl_tes)); ?></td>
 				       <td><?=$tes->mulai?> <strong>s/d</strong> <?=$tes->sampai?> </td>
-				        <td>Kampus <?php echo $site_title;?></td>
+				        <td>Kampus <?php echo $row->site_title;?></td>
 				    </tr>
 				<?php endforeach; ?>
 				<?php else: ?>
@@ -201,26 +189,40 @@
 					</tr>
 				<?php endif; ?>
 			</tbody>
-		</table> -->
+		</table>
+
 		<p>&nbsp;</p>
-		<div class="alert alert-warning">
+
+		<div style="font-size: 9pt">
 			<p>* Dengan ini saya menyatakan bahwa data yang saya masukan adalah benar.<br>
-				* Harap melakukan Verifikasi di Kampus <?php echo $site_title;?> sebelum tes berlangsung.<br>
+				* Harap melakukan Verifikasi di Kampus <?php echo $row->site_title;?> sebelum tes berlangsung.<br>
 				* Berkas yang harus dibawa saat verifikasi : </p>
 			<ul>
 				<li>Bukti Pendafatran</li>
 				<li>Pass Poto 3x4 ( 4 Lembar )</li>
 				<li>Foto Copy Ijazah Asli/Sementara</li>
 				<li>Foto Copy SKHUN Asli/Sementara</li>
-				<li>Membayar biaya pendaftaran Rp. 200.000</li>
+				<li>Membayar biaya pendaftaran Rp. <?=number_format($row->site_biaya);?></li>
 			</ul>
 		</div>
-		<div style="float: right; width: 28%; margin-bottom: 0pt; text-align: center;">
-		<strong>Pendaftar</strong><br>
-		<br>&nbsp;
-		<br>&nbsp;
-		<strong><?=$data->nama_pendaftar ?></strong>
-		</div>
+
+		<table width="100%" style="vertical-align: top; font-family:
+			serif; font-size: 12pt; color: #111;">
+		<tr>		
+				<td width="68%" align="right">
+					<img src="<?=base_url('photo/'.$data->foto.'') ?>" style="border:1px  solid #000000;" width="100px" />
+				</td>
+				<td width="32%" align="center">
+				<strong>Pendaftar</strong><br>
+				<br>&nbsp;
+				<br>&nbsp;
+				<br>&nbsp;
+				<br>&nbsp;
+				<strong><?=$data->nama_pendaftar ?></strong>
+				</td>
+			</tr>		
+		</table>
+
 
 	</div>
 	

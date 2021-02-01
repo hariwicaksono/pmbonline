@@ -20,6 +20,7 @@ class Pengaturan extends CI_Controller {
 		$data['site_title'] = $site_info->site_title;
 		$data['site_address'] = $site_info->site_address;
 		$data['site_alurpmb'] = $site_info->site_alurpmb;
+		$data['site_biaya'] = $site_info->site_biaya;
 		$data['site_favicon'] = $site_info->site_favicon;
 		$data['site_logo'] = $site_info->site_logo;
 		$data['site_facebook'] = $site_info->site_facebook;
@@ -39,6 +40,7 @@ class Pengaturan extends CI_Controller {
 		$site_name=$this->input->post('site_name', TRUE);
 		$site_title=$this->input->post('site_title', TRUE);
 		$site_address=$this->input->post('site_address', TRUE);
+		$site_biaya=$this->input->post('site_biaya', TRUE);
 		$site_phone=$this->input->post('site_phone', TRUE);
 		$site_email=$this->input->post('site_email', TRUE);
 		$site_website=$this->input->post('site_website', TRUE);
@@ -52,6 +54,7 @@ class Pengaturan extends CI_Controller {
 			'site_name'=>$site_name,
 			'site_title'=>$site_title,
 			'site_address'=>$site_address,
+			'site_biaya'=>$site_biaya,
 			'site_phone'=>$site_phone,
 			'site_email'=>$site_email,
 			'site_website'=>$site_website,

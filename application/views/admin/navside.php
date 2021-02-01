@@ -42,10 +42,10 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a class="btn btn-default btn-flat" data-toggle="modal" data-target="#modal_password"><i class="fa fa-gear"></i> Options</a>
+                  <a class="btn btn-default btn-flat" data-toggle="modal" data-target="#modal_password"><i class="fa fa-gear"></i> Ubah Password</a>
                 </div>
                 <div class="pull-right">
-                  <a href="<?php echo base_url('administrator/login/logout') ?>" class="btn btn-default btn-flat"><i class="fa fa-fw fa-sign-out"></i> Sign out</a>
+                  <a href="<?php echo base_url('administrator/login/logout') ?>" class="btn btn-default btn-flat"><i class="fa fa-fw fa-sign-out"></i> Keluar</a>
                 </div>
               </li>
             </ul>

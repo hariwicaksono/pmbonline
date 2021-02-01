@@ -1,12 +1,12 @@
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1><i class="fa fa-dashboard"></i>
-        Prodi
+        Master Prodi
         <small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Master Prodi</li>
       </ol>
     </section>
 
@@ -28,7 +28,7 @@
             <div class="box-body">
             <div id="pesan-sukses">
             </div>
-              <button type="button" id="add-prodi" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal_add"><i class="fa fa-fw fa-plus"></i> Tambah Prodi</button>
+              <button type="button" id="add-prodi" class="btn btn-primary" data-toggle="modal" data-target="#modal_add"><i class="fa fa-fw fa-plus"></i> Tambah Prodi</button>
               <table class="table table-hover table-bordered table-responsive">
                 <thead>
                   <tr>
@@ -178,8 +178,8 @@
                         '<td>'+data[i].jenjang+'</td>'+
                         '<td>'+data[i].kuota+'</td>'+
                         '<td>'+
-                          '<a href="javascript:void(0);" class="btn btn-success btn-xs" onclick="edit(\''+data[i].kode_prodi+'\')"><i class="fa fa-edit"></i> Edit</a>  '+
-                          '<a href="javascript:void(0);" class="btn btn-danger btn-xs"  onclick="hapus(\''+data[i].kode_prodi+'\')"><i class="fa fa-trash-o"></i> Delete</a>'+
+                          '<a href="javascript:void(0);" class="btn btn-primary btn-sm" onclick="edit(\''+data[i].kode_prodi+'\')"><i class="fa fa-edit"></i> Edit</a>  '+
+                          '<a href="javascript:void(0);" class="btn btn-danger btn-sm"  onclick="hapus(\''+data[i].kode_prodi+'\')"><i class="fa fa-trash-o"></i> Hapus</a>'+
                         '</td>'+
                         '</tr>';
                   no++;

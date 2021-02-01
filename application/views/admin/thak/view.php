@@ -4,12 +4,12 @@
 <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1><i class="fa fa-dashboard"></i>
-        Dashboard
+        Tahun Akademik
         <small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Tahun Akademik</li>
       </ol>
     </section>
 
@@ -66,7 +66,7 @@
             <div class="box-body">
             <div id="pesan-sukses">
             </div>
-              <button type="button" id="tambah-th" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#modal_add"><i class="fa fa-fw fa-plus"></i> Tahun Akademik</button>
+              <button type="button" id="tambah-th" class="btn btn-primary" data-toggle="modal" data-target="#modal_add"><i class="fa fa-fw fa-plus"></i> Tahun Akademik</button>
               <table class="table table-hover table-bordered table-responsive">
                 <thead>
                   <tr>
@@ -194,10 +194,10 @@
                         '<td>'+data[i].status+'</td>'+
                         '<td>'+data[i].ket+'</td>'+
                         '<td>'+
-                          '<a href="javascript:void(0);" class="btn btn-danger btn-md"  onclick="hapus('+data[i].thak+')"><i class="fa fa-trash-o"></i></a>'+
+                          '<a href="javascript:void(0);" class="btn btn-danger btn-sm"  onclick="hapus('+data[i].thak+')"><i class="fa fa-trash-o"></i></a>'+
                         '</td>'+
                         '<td>'+
-                          '<a href="javascript:void(0);" class="btn btn-success btn-md"  onclick="change_thak('+data[i].thak+')"><i class="fa fa-upload"></i>  Aktifkan Tahun Akademik</a>'+
+                          '<a href="javascript:void(0);" class="btn btn-success btn-sm"  onclick="change_thak('+data[i].thak+')"><i class="fa fa-upload"></i>  Aktifkan Tahun Akademik</a>'+
                         '</td>'+
                         '</tr>';
                   no++;

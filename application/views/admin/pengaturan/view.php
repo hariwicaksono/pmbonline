@@ -83,6 +83,13 @@
                   </div>
 
                   <div class="form-group">
+                      <label for="" class="col-sm-2 control-label">Biaya Pendaftaran</label>
+                      <div class="col-sm-10">
+                          <input type="text" name="site_biaya" class="form-control" id="site_biaya" value="<?php echo $site_biaya;?>">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
                       <label for="" class="col-sm-2 control-label">Link Facebook</label>
                       <div class="col-sm-10">
                           <input type="text" name="site_facebook" class="form-control" id="site_facebook" value="<?php echo $site_facebook;?>">
