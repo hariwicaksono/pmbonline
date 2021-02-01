@@ -5,15 +5,26 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Laporan Kelulusan</title>
 	
-	<link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
-    <script src="<?php echo base_url('assets/js/jquery.js') ?>"></script>
-    <script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
-
     <style type="text/css">
-    
+	@page {
+  	margin-top: 1.5cm;
+	margin-bottom: 1.5cm;
+	}
+    h1, h2, h3, h4, h5, h6, p {
+   margin: 0;
+   padding: 0;
+}
 	td {
 	    padding-top: .20em;
 	    padding-bottom: .20em;
+	}
+	table {
+  	border-collapse: collapse;
+	}
+
+	table td, th {
+	border: 1px solid #999;
+	padding: 0.2rem;
 	}
 	</style>
 </head>

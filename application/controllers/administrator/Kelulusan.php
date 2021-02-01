@@ -53,9 +53,10 @@ class Kelulusan extends CI_Controller {
 	// 	}
 	// 	redirect('administrator/pengumuman/prodi/'.$kode);
 	// }
-
+ 
 	public function report_maba($kode)
 	{
+		$this->load->library('pdfgenerator');
 		$kode_thak=$this->model_app->kode_thak_aktif();
 		$filter=array(
 				'thak'=>$kode_thak,
@@ -68,14 +69,10 @@ class Kelulusan extends CI_Controller {
        //print_r($d['maba']);
         $d['prodi']=$this->model_admin->ambil_prodi($kode);
         //$d['jadwal']=$this->model_admin->get_all_tes($kode_thak);
-       // load mPDF library
-        //$this->load->library('pdf');
 
         $pdfFilePath ="laporan-".$kode.time()."-download.pdf";
- 
-        //actually, you can pass mPDF parameter on this load() function
-		//$pdf = $this->pdf->load();
-		$mpdf = new \Mpdf\Mpdf();
+		$paper = 'A4';
+        $orientation = "portrait";
 
         //$header = '';
 
@@ -90,25 +87,21 @@ class Kelulusan extends CI_Controller {
     </tr></table>';
 
     //$mpdf->SetHTMLHeader($header);
-	$mpdf->SetHTMLFooter($footer);
+	//$mpdf->SetHTMLFooter($footer);
 
 
-        $mpdf->AddPage('L', // L - landscape, P - portrait
-            '', '', '', '',
-            20, // margin_left
-            20, // margin right
-            20, // margin top
-            20, // margin bottom
-            10, // margin header
-            12); // margin footer);
+        //$mpdf->AddPage('L', // L - landscape, P - portrait
+            //'', '', '', '',
+           // 20, // margin_left
+           // 20, // margin right
+           // 20, // margin top
+           // 20, // margin bottom
+          ///  10, // margin header
+           // 12); // margin footer);
 
         $html=$this->load->view('admin/kelulusan/report',$d , true);
+		$this->pdfgenerator->generate($html, $pdfFilePath, $paper, $orientation);
 
-        //generate the PDF!
-        $mpdf->WriteHTML($html);
-        
-        //offer it to user via browser download! (The PDF won't be saved on your server HDD)
-        $mpdf->Output($pdfFilePath, "I");
 	}
 
 }
