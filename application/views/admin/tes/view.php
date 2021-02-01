@@ -5,9 +5,8 @@
 <link rel="stylesheet" href="<?= base_url('assets/plugins/timepicker/bootstrap-clockpicker.min.css')  ?>"/>
 <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1><i class="fa fa-dashboard"></i>
+      <h1><i class="fa fa-calendar-o"></i>
         Jadwal Test
-        <small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -26,7 +25,7 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-tags"></i> Jadwal Test</h3>
+              <h3 class="box-title">Jadwal Test</h3>
               <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>

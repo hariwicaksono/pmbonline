@@ -26,7 +26,8 @@ class Login extends CI_Controller {
         }
         else
         {
-        	$this->session->set_flashdata('greeting', '<div id="greeting" class="callout callout-success">
+			$this->session->set_flashdata('greeting', '<div id="greeting" class="alert alert-success alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 				<strong>Selamat Datang dihalaman Administrator PMB</strong>
 			</div>');
         	redirect('administrator/main');
@@ -50,7 +51,7 @@ class Login extends CI_Controller {
 			}
 			return true;
 		}else{
-			$this->form_validation->set_message('cek_login', '<i class="fa fa-fw fa-exclamation-triangle"></i> Invalid Username or Password !');
+			$this->form_validation->set_message('cek_login', '<i class="fa fa-fw fa-exclamation-triangle"></i> Username atau Password Salah!');
 			return false;
 		}
 	}
@@ -64,30 +65,31 @@ class Login extends CI_Controller {
 
 	public function change_password()
 	{
-		$username=$this->input->post('username', TRUE);
+		//$username=$this->input->post('username', TRUE);
 		$password=$this->input->post('password', TRUE);
 		$confirm=$this->input->post('confirmPassword', TRUE);
-		$fullname=$this->input->post('fullname', TRUE);
+		//$fullname=$this->input->post('fullname', TRUE);
 		if ($confirm == $password) {
 			$pw_hash=password_hash($password,PASSWORD_DEFAULT);
 			$id=$this->session->userdata('logged_in')['id'];
 			$data=array(
-				'username'=>$username,
+				//'username'=>$username,
 				'password'=>$pw_hash,
-				'fullname'=>$fullname
+				//'fullname'=>$fullname
 				);
 			$result=$this->model_admin->change_password($id,$data);
 			if ($result) {
-				// $this->session->set_flashdata('callback', '<div class="alert alert-danger alert-dismissible">
-			 //        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-			 //        <h6>Silahkan Login Kembali</h6>
-			 //      </div>');
-				$this->logout();
+				 $this->session->set_flashdata('callback', '<div class="alert alert-success alert-dismissible">
+			         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			         <strong>Password Berhasil diganti, Silahkan Login Kembali</strong>
+				  </div>');
+				  redirect('administrator/main');
+				//$this->logout();
 			}else{
-				echo'<script type="text/javascript" charset="utf-8">alert("Failed To change Password")</script>';	
+				echo'<script type="text/javascript" charset="utf-8">alert("Gagal merubah Password")</script>';	
 			}
 		}else{
-			echo'<script type="text/javascript" charset="utf-8">alert("Invalid Password and confirmPassword")</script>';
+			echo'<script type="text/javascript" charset="utf-8">alert("Password dan confirmPassword Tidak Valid")</script>';
 		}
 		// print_r($this->input->post());
 	}

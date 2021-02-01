@@ -1,8 +1,7 @@
 <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1><i class="fa fa-dashboard"></i>
+      <h1><i class="fa fa-graduation-cap"></i>
         Master Jenjang
-        <small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
        <li><a href="<?=base_url('administrator/main') ?>"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -17,7 +16,7 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-graduation-cap"></i> Data Jenjang</h3>
+              <h3 class="box-title">Data Jenjang</h3>
               <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                 <!-- Buttons, labels, and many other things can be placed here! -->

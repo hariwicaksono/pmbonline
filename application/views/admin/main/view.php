@@ -13,7 +13,7 @@
     <!-- Main content -->
     <section class="content">
     <?php echo $this->session->flashdata('greeting'); ?>
-
+    <?php echo $this->session->flashdata('callback'); ?>
     
          <!-- Small boxes (Stat box) -->
       <div class="row">

@@ -2,9 +2,8 @@
  ?>
 <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1><i class="fa fa-dashboard"></i>
+      <h1><i class="fa fa-file-o"></i>
         Data Kelulusan
-        <small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?=base_url('administrator/main') ?>"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -19,7 +18,7 @@
         <div class="col-md-12">
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-bullhorn"></i> Kelulusan</h3>
+              <h3 class="box-title">Kelulusan</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -29,7 +28,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <div class="callout callout-success">
+              <div class="callout callout-info">
                 <h4><i class="fa fa-warning"></i> Pilih Prodi</h4>
                 <p>Pilih Data Kelulusan berdasarkan Prodi!</p>
               </div>    

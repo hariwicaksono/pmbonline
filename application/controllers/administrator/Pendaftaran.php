@@ -50,7 +50,7 @@ class Pendaftaran extends CI_Controller {
 				$no++;
 			}
 		}else{
-			$html.='<tr><td colspan="7">Tidak Ada Data Jadwal Tes</td></tr>';
+			$html.='<tr><td colspan="7">Tidak Ada Data</td></tr>';
 		}
 		echo $html;
 	}

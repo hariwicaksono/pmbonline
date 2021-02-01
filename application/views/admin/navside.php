@@ -100,7 +100,7 @@
     </section>
     <!-- /.sidebar -->
   </aside>
-
+ 
    <div class="modal fade" id="modal_password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -111,11 +111,6 @@
           <div class="modal-body">
           <?=form_open('administrator/login/change_password',array('data-toggle'=>'validator','role'=>'form')); ?>
             <!-- <form action="#" method="POST" data-toggle="validator" role="form"> -->
-            <div class="form-group">
-              <label for="inputName" class="control-label">Username</label>
-              <input type="text" class="form-control" data-minlength="5" maxlength="15" name="username" id="inputName" placeholder="Username" required>
-              <div class="help-block with-errors"></div>
-            </div>
              <div class="form-group">
                <label for="inputPassword" class="control-label">Password</label>
               <input type="password" data-minlength="5" class="form-control" name="password" id="inputPassword" placeholder="Password" required>
@@ -126,14 +121,9 @@
               <input type="password" class="form-control" id="inputPasswordConfirm" name="confirmPassword" data-match="#inputPassword" data-match-error="Upss ,Password Tidak cocok " placeholder="ConfirmPassword" required>
               <div class="help-block with-errors"></div>
             </div>
-            <div class="form-group">
-              <label for="inputFullame" class="control-label">Fullname</label>
-              <input type="text" class="form-control" data-minlength="5" maxlength="20" name="fullname" id="fullname" placeholder="Fullname" required>
-              <div class="help-block with-errors"></div>
-            </div>
             <div class="modal-footer">
               <div class="form-group">
-                <button type="submit" class="btn btn-primary">Change</button>
+                <button type="submit" class="btn btn-primary">Ganti</button>
               </div>
             </div>
           </form>

@@ -3,9 +3,8 @@
 <link rel="stylesheet" href="<?= base_url('assets/css/datepicker/bootstrap-datepicker3.css')  ?>"/>
 <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1><i class="fa fa-dashboard"></i>
+      <h1><i class="fa fa-calendar-check-o"></i>
         Tahun Akademik
-        <small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -20,7 +19,7 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-tags"></i> Tahun Akademik yang sedang Aktif</h3>
+              <h3 class="box-title">Tahun Akademik yang sedang Aktif</h3>
               <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
@@ -55,7 +54,7 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-tags"></i>Data Tahun Akademik</h3>
+              <h3 class="box-title">Data Tahun Akademik</h3>
               <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>

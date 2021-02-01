@@ -40,7 +40,7 @@ class Tes extends CI_Controller {
 		$table='agenda_tes';
 		$result=$this->model_admin->auto_insert($table,$data);
 		if ($result) {
-			$msg['pesan']='<div class="alert alert-success" role="alert">Jadwal berhasil  di tambahkan</div>';
+			$msg['pesan']='<div class="alert alert-success" role="alert">Jadwal berhasil di tambahkan</div>';
 			$msg['success'] = true;
 		}
 		echo json_encode($msg);

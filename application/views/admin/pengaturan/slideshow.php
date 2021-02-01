@@ -1,8 +1,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
-      <h1><i class="fa fa-dashboard"></i>
+      <h1><i class="fa fa-slideshare" aria-hidden="true"></i>
         Pengaturan Slideshow
-        <small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
        <li><a href="<?=base_url('administrator/main') ?>"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -17,7 +16,7 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-gear"></i> Data Pengaturan Slideshow</h3>
+              <h3 class="box-title">Data Pengaturan Slideshow</h3>
               <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                 <!-- Buttons, labels, and many other things can be placed here! -->
@@ -76,7 +75,7 @@
                   <div class="form-group">
                       <input type="hidden" name="id" value="<?php echo $id?>">
                       <div class="col-sm-offset-2 col-sm-10">
-                          <button type="submit" class="btn btn-success">UPDATE</button>
+                          <button type="submit" class="btn btn-success"><i class="fa fa-save" aria-hidden="true"></i> UPDATE</button>
                       </div>
                   </div>
                       

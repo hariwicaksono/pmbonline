@@ -49,6 +49,7 @@
     <img src="<?php echo base_url('assets/images/'.$site_logo);?>" width="55" alt=""> <a href="<?= base_url('home') ?>"><b><?php echo $site_name;?></b></a>
   </div>
   <!-- /.login-logo -->
+  <?php echo $this->session->flashdata('callback'); ?>
   <div class="login-box-body">
     <p class="login-box-msg">Masuk untuk memulai sesi Anda</p>
     <?php if(validation_errors()) { ?>
