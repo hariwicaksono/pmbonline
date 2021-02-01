@@ -12,7 +12,7 @@
         <li class="active">Verifikasi</li>
       </ol>
     </section>
-
+ 
     <!-- Main content -->
     <section class="content">
 
@@ -30,6 +30,7 @@
             <div class="box-body">
             <div id="pesan-sukses">
             </div>
+            <?php echo $this->session->flashdata('success'); ?>
               <div class="table-responsive">
                 <table id="tabel_daftar" class="table table-hover table-bordered table-responsive">
                   <thead>

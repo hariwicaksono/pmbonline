@@ -1,9 +1,8 @@
 <!-- DataTables -->
 <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1><i class="fa fa-dashboard"></i>
+      <h1><i class="fa fa-check"></i>
         Verifikasi
-        <small>Control Panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?=base_url('administrator/main') ?>"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -18,7 +17,7 @@
         <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title"><i class="fa fa-tags"></i>Lakukan Verifikasi</h3>
+              <h3 class="box-title">Lakukan Verifikasi</h3>
               <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                 <!-- Buttons, labels, and many other things can be placed here! -->
@@ -30,7 +29,7 @@
                <?=form_open('',array('class'=>'form-horizontal','data-toggle'=>'validator','role'=>'form')); ?>
                <div class="col-md-6">
                   <!-- <label class="label label-info"><strong>Data Pendaftar</strong></label> -->
-                  <h4 class="text-danger"><i class="fa fa-user"><strong><em> Data Pendaftar</em></strong></i></h4>
+                  <h4 class="text-danger"><i class="fa fa-user"></i> <strong>Data Pendaftar</strong></h4>
                   <div class="form-group">
                     <label for="nisn" class="col-xs-2 control-label">NISN</label>
                     <div class="col-xs-10">
@@ -43,6 +42,14 @@
                       <input type="text" class="form-control" id="nama" value="<?=$siswa->nama_pendaftar ?>">
                     </div>
                   </div>
+
+                  <div class="form-group">
+                    <label for="nama" class="col-xs-2 control-label">NIK KTP</label>
+                    <div class="col-xs-10">
+                      <input type="text" class="form-control" id="nikktp" value="<?=$siswa->nikktp ?>">
+                    </div>
+                  </div>
+
                   <div class="form-group">
                     <label for="tgl" class="col-xs-2 control-label">Tgl Lahir</label>
                     <div class="col-xs-4">
@@ -71,7 +78,7 @@
                       <input type="email" class="form-control" id="inputEmail3" placeholder="Email" value="<?=$siswa->email ?>">
                     </div>
                   </div>
-                  <h4 class="text-danger"><i class="fa fa-university"></i> <strong><em> Data Sekolah</em></strong></h4>
+                  <h4 class="text-danger"><i class="fa fa-university"></i> <strong>Data Sekolah</strong></h4>
                   <div class="form-group">
                       <label for="skl" class="col-xs-3 control-label">Asal Sekolah</label>
                       <div class="col-xs-9">
@@ -90,9 +97,26 @@
                         <input type="text" class="form-control" id="prodi" value="<?=$siswa->jenjang ?> <?=$siswa->nama_prodi ?>">
                       </div>
                   </div>
+
+                  <h4 class="text-danger"><i class="fa fa-user"></i> <strong>Data Orang Tua</strong></h4>
+                  <div class="form-group">
+                      <label for="un" class="col-xs-3 control-label">Nama Ibu Kandung</label>
+                      <div class="col-xs-9">
+                        <input type="text" class="form-control" name="nama_ibu_kandung" value="<?=$siswa->nama_ibu_kandung ?>">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="un" class="col-xs-3 control-label">Nama Ayah Kandung</label>
+                      <div class="col-xs-9">
+                        <input type="text" class="form-control" name="nama_ayah_kandung" value="<?=$siswa->nama_ayah_kandung ?>">
+                      </div>
+                  </div>
+
                </div>
+
                <div class="col-md-6">
-                <h4 class="text-red"><i class="fa fa-check-square-o"><strong><em> Verifikasi</em></strong></i></h4>
+                <h4 class="text-red"><i class="fa fa-check-square-o"></i> <strong>Verifikasi</strong></h4>
                 <div style="text-align: center;">
                    <img class="img-thumbnail" src="<?=base_url('photo/'.$siswa->foto.'') ?>" width="90" height="120" alt="">
                 </div>
@@ -157,7 +181,7 @@
                   <div class="form-group">
                     <label class="col-xs-4 control-label">Biaya Ujian</label>
                     <div class="col-xs-8">
-                      <p class="form-control-static">Rp. 200.000</p>
+                      <p class="form-control-static">Rp. <?=number_format($site_biaya);?></p>
                     </div>
                   </div>
                    <div class="form-group">

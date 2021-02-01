@@ -172,9 +172,14 @@
 						</div>
 						<div class="form-group row">
 							<label class="col-sm-2 col-form-label">Nama Lengkap</label>
-							<div class="col-sm-10">
+							<div class="col-sm-6">
 								<input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" required>
 							</div>
+
+							<div class="col-sm-4">
+								<input type="text" class="form-control" name="nikktp" placeholder="Nomor NIK KTP" required>
+							</div>
+
 						</div>
 						<div class="form-group row">
 							

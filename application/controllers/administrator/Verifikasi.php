@@ -72,15 +72,24 @@
 			if (!empty($id))
 	        {
 	        	if (isset($_POST['submit'])) {
+					$ibu=$this->input->post('nama_ibu_kandung', TRUE);
+					$ayah=$this->input->post('nama_ayah_kandung', TRUE);
 	        		$pas_foto=$this->input->post('pas_foto', TRUE);
 	        		$fc_ijazah=$this->input->post('fc_ijazah', TRUE);
 	        		$fc_skhu=$this->input->post('fc_skhu', TRUE);
 	        		$t = date("Y-m-d H:i:s");
-	        		$data=array('pas_foto'=>$pas_foto,
+	        		$data=array(
+						'nama_ibu_kandung'=>$ibu,
+						'nama_ayah_kandung'=>$ayah,
+						'pas_foto'=>$pas_foto,
 	        					'fc_ijazah'=>$fc_ijazah,
 	        					'fc_skhu'=>$fc_skhu,
 	        					'verifikasi_tgl'=>$t);
-	        		$result=$this->model_app->do_verifikasi($data,$id);
+					$result=$this->model_app->do_verifikasi($data,$id);
+					$this->session->set_flashdata('success', '<div class="alert alert-success alert-dismissible">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+						<strong>Berhasil Melakukan Verifikasi</strong>
+					</div>');
 	        		redirect('administrator/verifikasi');
 	        	}else{
 					$site_info = $this->db->get('pengaturan', 1)->row();
@@ -88,6 +97,7 @@
 					$d['site_title'] = $site_info->site_title;
 					$d['site_logo'] = $site_info->site_logo;
 					$d['site_favicon'] = $site_info->site_favicon;
+					$d['site_biaya'] = $site_info->site_biaya;
 	        		$d['siswa']=$this->model_admin->get_detail_siswa($id);
 	        		$d['content']=$this->load->view('admin/verifikasi/do_verifikasi',$d, TRUE);
 	       			$this->load->view('admin/home', $d); 
@@ -101,7 +111,7 @@
  
 		public function cetak_verifikasi($id=NULL)
 		{
-
+			$this->load->library('pdfgenerator');
 			$site_info = $this->db->get('pengaturan', 1)->row();
 			$d['site_name'] = $site_info->site_name;
 			$d['site_title'] = $site_info->site_title;
@@ -114,24 +124,14 @@
 		        $d['data']=$this->model_app->cetak_ver($id);
 		        $d['jadwal']=$this->model_admin->get_all_tes($kode_thak);
 		       //print_r($data);
-		       //load mPDF library
-		        //$this->load->library('m_pdf');
-
-		       
-		        $pdfFilePath ="registrasi-".time()."-download.pdf";
-		 
 		        
-		        //actually, you can pass mPDF parameter on this load() function
-		        //$pdf = $this->m_pdf->load();
-				$mpdf = new \Mpdf\Mpdf();
+		        $pdfFilePath ="registrasi-".time()."-download.pdf";
+				$paper = 'A4';
+				$orientation = "portrait";
 				
 		        $html=$this->load->view('admin/verifikasi/cetak_verifikasi',$d, true);
-
-		        //generate the PDF!
-		        $mpdf->WriteHTML($html);
-		        
-		        //offer it to user via browser download! (The PDF won't be saved on your server HDD)
-		        $mpdf->Output($pdfFilePath, "I");
+				$this->pdfgenerator->generate($html, $pdfFilePath, $paper, $orientation);
+	
 	        }
 	        else{
 	        	// Whoops, we don't have a page for that!

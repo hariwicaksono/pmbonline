@@ -38,6 +38,7 @@ class Pendaftaran extends CI_Controller {
 				$html.='<tr>
 						<td>'.$no.'</td>
 						<td>'.$data->nama_pendaftar.'</td>
+						<td>'.$data->nikktp.'</td>
 						<td>'.$data->nisn.'</td>
 						<td>'.$data->sekolah.'</td>
 						<td>'.$data->jenjang.' '.$data->nama_prodi.'</td>

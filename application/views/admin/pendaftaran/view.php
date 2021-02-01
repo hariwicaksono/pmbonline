@@ -36,7 +36,8 @@
                     <tr>
                       <th>No</th>
                       <th>Nama</th>
-                      <th>Nisn</th>
+                      <th>NIK/KTP</th>
+                      <th>NISN</th>
                       <th>Sekolah</th>
                       <th>Prodi</th>
                       <th></th>
@@ -124,6 +125,14 @@
                             <label for="inputEmail3" class="col-xs-3 control-label">Nama</label>
                             <div class="col-xs-9">
                               <input type="email" class="form-control" id="nama" placeholder="Nama" readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="form-group">
+                            <label for="inputEmail3" class="col-xs-3 control-label">NIK KTP</label>
+                            <div class="col-xs-9">
+                              <input type="email" class="form-control" id="nikktp" placeholder="No.NIK/KTP" readonly>
                             </div>
                           </div>
                         </div>
@@ -251,6 +260,7 @@
               $("#foto").attr('src',"<?php echo base_url('photo/') ?>"+data.foto);
               $("#nisn").val(data.nisn);
               $("#nama").val(data.nama_pendaftar);
+              $("#nikktp").val(data.nikktp);
               $("#tgl").val(data.tgl_lahir);
               $("#agama").val(data.agama);
               $("#alamat").val(data.alamat);

@@ -333,7 +333,7 @@ class model_admin extends CI_Model {
 
 	public function get_all_siswa($kode_thak)
 	{
-		$this->db->select('id_daftar,nama_pendaftar,nisn,sekolah,nama_prodi,jenjang,nilai_tes,input_tes_tgl,fc_ijazah,fc_skhu,verifikasi_tgl');
+		$this->db->select('id_daftar,nama_pendaftar,nikktp,nisn,sekolah,nama_prodi,jenjang,nilai_tes,input_tes_tgl,fc_ijazah,fc_skhu,verifikasi_tgl');
 		$this->db->from('pendaftaran');
 		$this->db->join('prodi', 'prodi.kode_prodi = pendaftaran.prodi');
 		$this->db->join('jenjang', 'jenjang.kode_jenjang = prodi.jenjang_id');

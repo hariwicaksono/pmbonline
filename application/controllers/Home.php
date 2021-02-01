@@ -77,6 +77,7 @@ class Home extends CI_Controller {
                               
                                 $nisn=strtoupper($this->input->post('nisn', TRUE));
                                 $nama=strtoupper($this->input->post('nama', TRUE));
+                                $nikktp=$this->input->post('nikktp', TRUE);
                                 $agama=strtoupper($this->input->post('agama', TRUE));
                                 $jkel=$this->input->post('jenisKelamin', TRUE);
                                 $tgl=$this->input->post('tgl_lahir', TRUE);
@@ -93,6 +94,7 @@ class Home extends CI_Controller {
                                 $data=array(
                                     'thak'=>$kode_thak,
                                     'nama_pendaftar'=>$nama,
+                                    'nikktp'=>$nikktp,
                                     'nisn'=>$nisn,
                                     'tgl_lahir'=>$tgl,
                                     'jkel'=>$jkel,
