@@ -17,7 +17,7 @@ class Prodi extends CI_Controller {
 		$data['site_title'] = $site_info->site_title;
 		$data['site_logo'] = $site_info->site_logo;
 		$data['site_favicon'] = $site_info->site_favicon;
-		$d['jenjang']=$this->model_admin->data_jenjang();
+		$d['jenjang']=$this->Model_admin->data_jenjang();
 		$data['content']=$this->load->view('admin/prodi/view', $d, TRUE);
 		$this->load->view('admin/home', $data);
 	}
@@ -41,7 +41,7 @@ class Prodi extends CI_Controller {
 				);
 			$table='prodi';
 			
-			$q=$this->model_admin->auto_insert($table,$data);
+			$q=$this->Model_admin->auto_insert($table,$data);
 			if ($q) {
 				$msg['pesan']='<div class="alert alert-success" role="alert"><i class="fa fa-fw fa-check-square-o"></i> Prodi berhasil  di tambahkan</div>';
 				$msg['success'] = true;
@@ -56,7 +56,7 @@ class Prodi extends CI_Controller {
 
 	private function cek_prodi($kode_prodi)
 	{
-		$cek=$this->model_cek->cek_prodi($kode_prodi);
+		$cek=$this->Model_cek->cek_prodi($kode_prodi);
 		if ($cek) {
 			return true;
 		}else{
@@ -66,7 +66,7 @@ class Prodi extends CI_Controller {
 
 	public function show_prodi()
 	{
-		$result=$this->model_admin->get_prodi();
+		$result=$this->Model_admin->get_prodi();
 		if ($result) {
 			echo json_encode($result);
 		}else{
@@ -77,7 +77,7 @@ class Prodi extends CI_Controller {
 
 	public function get_prodi($id)
 	{
-		$res=$this->model_admin->ambil_prodi($id);
+		$res=$this->Model_admin->ambil_prodi($id);
 		if ($res) {
 			echo json_encode($res);
 		}else{
@@ -97,7 +97,7 @@ class Prodi extends CI_Controller {
 			'jenjang_id'=>$jenjang,
 			'kuota'=>$kuota,
 			);
-		$result=$this->model_admin->ubah_prodi($id,$data);
+		$result=$this->Model_admin->ubah_prodi($id,$data);
 		if ($result) {
 			$msg['success'] = true;
 			$msg['pesan'] = '<div class="alert alert-success" role="alert"><i class="fa fa-fw fa-check-square-o"></i> Prodi berhasil  di Update</div>';
@@ -108,7 +108,7 @@ class Prodi extends CI_Controller {
 	public function delete_prodi()
 	{
 		$id=$this->input->post('id', TRUE);
-		$q=$this->model_admin->hapus_prodi($id);
+		$q=$this->Model_admin->hapus_prodi($id);
 		if ($q) {
 			$msg['success'] = true;
 			$msg['pesan'] = '<div class="alert alert-success" role="alert"><i class="fa fa-fw fa-check-square-o"></i> Prodi berhasil  di Hapus</div>';

@@ -38,7 +38,7 @@ class Login extends CI_Controller {
 	{
 		$us=$this->input->post('username');
 		$pw=$this->input->post('password');
-		$q=$this->model_admin->cek_login($us,$pw);
+		$q=$this->Model_admin->cek_login($us,$pw);
 		if ($q) {
 			foreach ($q as $row)
 			{
@@ -77,7 +77,7 @@ class Login extends CI_Controller {
 				'password'=>$pw_hash,
 				//'fullname'=>$fullname
 				);
-			$result=$this->model_admin->change_password($id,$data);
+			$result=$this->Model_admin->change_password($id,$data);
 			if ($result) {
 				 $this->session->set_flashdata('callback', '<div class="alert alert-success alert-dismissible">
 			         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

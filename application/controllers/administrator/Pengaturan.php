@@ -85,7 +85,7 @@ class Pengaturan extends CI_Controller {
 			$data['site_alurpmb']=$logo['file_name'];
 		}
 
-		$result=$this->model_admin->update_pengaturan($id,$data);
+		$result=$this->Model_admin->update_pengaturan($id,$data);
 		$this->session->set_flashdata('msg','success');
 		redirect('administrator/pengaturan');  
 	}
@@ -149,7 +149,7 @@ class Pengaturan extends CI_Controller {
 			$data['slide_3']=$slide3['file_name'];
 		}
 
-		$result=$this->model_admin->update_slideshow($id,$data);
+		$result=$this->Model_admin->update_slideshow($id,$data);
 		$this->session->set_flashdata('msg','success');
 		redirect('administrator/pengaturan/slideshow');  
 	}

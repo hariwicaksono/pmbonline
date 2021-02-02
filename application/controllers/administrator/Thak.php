@@ -18,7 +18,7 @@ class Thak extends CI_Controller {
 		$data['site_title'] = $site_info->site_title;
 		$data['site_logo'] = $site_info->site_logo;
 		$data['site_favicon'] = $site_info->site_favicon;
-		$d['thak_aktif']=$this->model_admin->ambil_thak_aktif();
+		$d['thak_aktif']=$this->Model_admin->ambil_thak_aktif();
 		$data['content']=$this->load->view('admin/thak/view',$d, TRUE);
 		$this->load->view('admin/home', $data);
 	}
@@ -42,7 +42,7 @@ class Thak extends CI_Controller {
 				'created_at'=>$t
 				);
 			$table='thak';
-			$q=$this->model_admin->auto_insert($table,$data);
+			$q=$this->Model_admin->auto_insert($table,$data);
 			if ($q) {
 				$msg['pesan']='<div class="alert alert-success" role="alert">Tahun Akademik berhasil  di tambahkan</div>';
 				$msg['success'] = true;
@@ -55,7 +55,7 @@ class Thak extends CI_Controller {
 
 	private function cek_thak($thak)
 	{
-		$cek = $this->model_cek->cek_thak($thak);
+		$cek = $this->Model_cek->cek_thak($thak);
 		if ($cek) {
 			return true;
 		}else{
@@ -65,7 +65,7 @@ class Thak extends CI_Controller {
 
 	public function show_thak()
 	{
-		$q=$this->model_admin->show_all_thak();
+		$q=$this->Model_admin->show_all_thak();
 		if ($q) {
 			echo json_encode($q);
 		}else{
@@ -77,7 +77,7 @@ class Thak extends CI_Controller {
 	public function delete_thak()
 	{
 		$thak=$this->input->post('id', TRUE);
-		$q=$this->model_admin->hapus_thak($thak);
+		$q=$this->Model_admin->hapus_thak($thak);
 		if ($q) {
 			$msg['success'] = true;
 			$msg['pesan'] = '<div class="alert alert-success" role="alert">Tahun Akademik berhasil  di Hapus</div>';
@@ -91,7 +91,7 @@ class Thak extends CI_Controller {
 		$data=array(
 			'ket'=>'Ditutup'
 			);
-		$result=$this->model_admin->tutup_reg($id,$data);
+		$result=$this->Model_admin->tutup_reg($id,$data);
 		if ($result) {
 			$msg['success'] = true;
 		}else{
@@ -106,7 +106,7 @@ class Thak extends CI_Controller {
 		$data=array(
 			'ket'=>'Dibuka'
 			);
-		$result=$this->model_admin->open_reg($id,$data);
+		$result=$this->Model_admin->open_reg($id,$data);
 		if ($result) {
 			$msg['success'] = true;
 		}else{
@@ -118,7 +118,7 @@ class Thak extends CI_Controller {
 	public function change_thak()
 	{
 		$thak=$this->input->post('id', TRUE);
-		$result=$this->model_admin->ubah_thak($thak);
+		$result=$this->Model_admin->ubah_thak($thak);
 		if ($result) {
 			$msg['success'] = true;
 		}else{

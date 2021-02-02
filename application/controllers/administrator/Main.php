@@ -30,14 +30,14 @@ class Main extends CI_Controller {
 	public function add_info()
 	{
 		$info=$this->input->post('info', TRUE);
-		$thak=$this->model_app->kode_thak_aktif();
+		$thak=$this->Model_app->kode_thak_aktif();
 		$t = date("Y-m-d H:i:s");
 		$data=array(
 			'thak'=>$thak,
 			'info'=>$info,
 			'created_at'=>$t
 			);
-		$result=$this->model_app->tambah_info($data);
+		$result=$this->Model_app->tambah_info($data);
 		$msg['success'] = false;
 		if ($result) {
 			$msg['pesan']='<div class="alert alert-success" role="alert">Informasi berhasil  di tambahkan</div>';
@@ -48,8 +48,8 @@ class Main extends CI_Controller {
 
 	public function show_info()
 	{
-		$kode_thak=$this->model_app->kode_thak_aktif();
-		$q=$this->model_app->get_all_info($kode_thak);
+		$kode_thak=$this->Model_app->kode_thak_aktif();
+		$q=$this->Model_app->get_all_info($kode_thak);
 		$html='';
 		$no=1;
 		if ($q) {
@@ -72,7 +72,7 @@ class Main extends CI_Controller {
 
 	public function get_info($id)
 	{
-		$res=$this->model_app->ambil_info($id);
+		$res=$this->Model_app->ambil_info($id);
 		if ($res) {
 			echo json_encode($res);
 		}
@@ -85,7 +85,7 @@ class Main extends CI_Controller {
 		$data=array(
 				'info'=>$info
 			);
-		$result=$this->model_app->ubah_info($id,$data);
+		$result=$this->Model_app->ubah_info($id,$data);
 		if ($result) {
 			$msg['pesan']='<div class="alert alert-success" role="alert">Informasi berhasil  di Update</div>';
 			$msg['success'] = true;
@@ -96,7 +96,7 @@ class Main extends CI_Controller {
 	public function delete_info()
 	{
 		$id=$this->input->post('id', TRUE);
-		$q=$this->model_app->hapus_info($id);
+		$q=$this->Model_app->hapus_info($id);
 		if ($q) {
 			$msg['pesan']='<div class="alert alert-success" role="alert">Informasi berhasil  di Hapus</div>';
 			$msg['success'] = true;

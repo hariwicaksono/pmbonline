@@ -14,7 +14,7 @@ class Kelulusan extends CI_Controller {
 		$data['site_title'] = $site_info->site_title;
 		$data['site_logo'] = $site_info->site_logo;
 		$data['site_favicon'] = $site_info->site_favicon;
-		$d['prodi']=$this->model_app->get_prodi();
+		$d['prodi']=$this->Model_app->get_prodi();
 		$data['content']=$this->load->view('admin/kelulusan/view', $d, TRUE);
 		$this->load->view('admin/home', $data);
 	}
@@ -26,22 +26,22 @@ class Kelulusan extends CI_Controller {
 		$data['site_title'] = $site_info->site_title;
 		$data['site_logo'] = $site_info->site_logo;
 		$data['site_favicon'] = $site_info->site_favicon;
-		$thak=$this->model_app->kode_thak_aktif();
-		$d['prodi']=$this->model_app->ambil_prodi($kode_prodi);
-		$d['siswa']=$this->model_app->get_siswa_prodi($kode_prodi,$thak);
+		$thak=$this->Model_app->kode_thak_aktif();
+		$d['prodi']=$this->Model_app->ambil_prodi($kode_prodi);
+		$d['siswa']=$this->Model_app->get_siswa_prodi($kode_prodi,$thak);
 		$data['content']=$this->load->view('admin/kelulusan/prodi', $d, TRUE);
 		$this->load->view('admin/home', $data);
 	}
 
 	// public function do_verifikasi($kode)
 	// {
-	// 	$thak=$this->model_app->kode_thak_aktif();
-	// 	$limit=$this->model_app->get_limit($kode);
+	// 	$thak=$this->Model_app->kode_thak_aktif();
+	// 	$limit=$this->Model_app->get_limit($kode);
 	// 	$filter=array(
 	// 		'prodi'=>$kode,
 	// 		'thak'=>$thak
 	// 		);
-	// 	$set_lulus=$this->model_app->set_lulus($filter,$limit);
+	// 	$set_lulus=$this->Model_app->set_lulus($filter,$limit);
 	// 	if ($set_lulus) {
 	// 		$this->session->set_flashdata('info', '<div class="alert alert-success alert-dismissible">
 	// 								                <h4><i class="icon fa fa-check"></i> Berhasil Verifikasi!</h4>
@@ -57,18 +57,18 @@ class Kelulusan extends CI_Controller {
 	public function report_maba($kode)
 	{
 		$this->load->library('pdfgenerator');
-		$kode_thak=$this->model_app->kode_thak_aktif();
+		$kode_thak=$this->Model_app->kode_thak_aktif();
 		$filter=array(
 				'thak'=>$kode_thak,
 				'prodi'=>$kode,
 				'nilai_tes !='=>0
 			);
-		$limit=$this->model_app->get_limit($kode);
-		$d['thak_aktif']=$this->model_admin->ambil_thak_aktif();
-		$d['maba']=$this->model_app->report($filter,$limit);
+		$limit=$this->Model_app->get_limit($kode);
+		$d['thak_aktif']=$this->Model_admin->ambil_thak_aktif();
+		$d['maba']=$this->Model_app->report($filter,$limit);
        //print_r($d['maba']);
-        $d['prodi']=$this->model_admin->ambil_prodi($kode);
-        //$d['jadwal']=$this->model_admin->get_all_tes($kode_thak);
+        $d['prodi']=$this->Model_admin->ambil_prodi($kode);
+        //$d['jadwal']=$this->Model_admin->get_all_tes($kode_thak);
 
         $pdfFilePath ="laporan-".$kode.time()."-download.pdf";
 		$paper = 'A4';

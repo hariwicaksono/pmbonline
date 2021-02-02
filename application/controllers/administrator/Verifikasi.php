@@ -23,8 +23,8 @@
 	
 		public function show_pendaftaran()
 		{
-			$kode_thak=$this->model_app->kode_thak_aktif();
-			$q=$this->model_admin->get_all_siswa($kode_thak);
+			$kode_thak=$this->Model_app->kode_thak_aktif();
+			$q=$this->Model_admin->get_all_siswa($kode_thak);
 			$html='';
 			$no=1;
 			if ($q) {
@@ -85,7 +85,7 @@
 	        					'fc_ijazah'=>$fc_ijazah,
 	        					'fc_skhu'=>$fc_skhu,
 	        					'verifikasi_tgl'=>$t);
-					$result=$this->model_app->do_verifikasi($data,$id);
+					$result=$this->Model_app->do_verifikasi($data,$id);
 					$this->session->set_flashdata('success', '<div class="alert alert-success alert-dismissible">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 						<strong>Berhasil Melakukan Verifikasi</strong>
@@ -98,7 +98,7 @@
 					$d['site_logo'] = $site_info->site_logo;
 					$d['site_favicon'] = $site_info->site_favicon;
 					$d['site_biaya'] = $site_info->site_biaya;
-	        		$d['siswa']=$this->model_admin->get_detail_siswa($id);
+	        		$d['siswa']=$this->Model_admin->get_detail_siswa($id);
 	        		$d['content']=$this->load->view('admin/verifikasi/do_verifikasi',$d, TRUE);
 	       			$this->load->view('admin/home', $d); 
 	        	}
@@ -120,9 +120,9 @@
 			$d['site_phone'] = $site_info->site_phone;
 			$d['site_email'] = $site_info->site_email;
 			if (!empty($id)){
-	        	$kode_thak=$this->model_app->kode_thak_aktif();
-		        $d['data']=$this->model_app->cetak_ver($id);
-		        $d['jadwal']=$this->model_admin->get_all_tes($kode_thak);
+	        	$kode_thak=$this->Model_app->kode_thak_aktif();
+		        $d['data']=$this->Model_app->cetak_ver($id);
+		        $d['jadwal']=$this->Model_admin->get_all_tes($kode_thak);
 		       //print_r($data);
 		        
 		        $pdfFilePath ="registrasi-".time()."-download.pdf";

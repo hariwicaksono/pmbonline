@@ -23,7 +23,7 @@ class Tes extends CI_Controller {
 
 	public function add_tes()
 	{
-		$kode_thak=$this->model_app->kode_thak_aktif();
+		$kode_thak=$this->Model_admin->kode_thak_aktif();
 		$tes=strtoupper($this->input->post('tes', TRUE));
 		$tgl=$this->input->post('tgl_tes', TRUE);
 		$mulai=$this->input->post('mulai', TRUE);
@@ -38,7 +38,7 @@ class Tes extends CI_Controller {
 			'ket'=>$ket
 			);
 		$table='agenda_tes';
-		$result=$this->model_admin->auto_insert($table,$data);
+		$result=$this->Model_admin->auto_insert($table,$data);
 		if ($result) {
 			$msg['pesan']='<div class="alert alert-success" role="alert">Jadwal berhasil di tambahkan</div>';
 			$msg['success'] = true;
@@ -48,8 +48,8 @@ class Tes extends CI_Controller {
 
 	public function show_tes()
 	{
-		$kode_thak=$this->model_app->kode_thak_aktif();
-		$q=$this->model_admin->get_all_tes($kode_thak);
+		$kode_thak=$this->Model_admin->kode_thak_aktif();
+		$q=$this->Model_admin->get_all_tes($kode_thak);
 		$html='';
 		$no=1;
 		if ($q) {
@@ -75,7 +75,7 @@ class Tes extends CI_Controller {
 
 	public function get_tes($id)
 	{
-		$res=$this->model_admin->ambil_tes($id);
+		$res=$this->Model_admin->ambil_tes($id);
 		if ($res) {
 			echo json_encode($res);
 		}
@@ -96,7 +96,7 @@ class Tes extends CI_Controller {
 			'tgl_tes'=>$tgl,
 			'ket'=>$ket
 			);
-		$query=$this->model_admin->update_tes($id,$data);
+		$query=$this->Model_admin->update_tes($id,$data);
 		if ($query) {
 			$msg['pesan']='<div class="alert alert-success" role="alert">Jadwal berhasil  di Update</div>';
 			$msg['success'] = true;
@@ -107,7 +107,7 @@ class Tes extends CI_Controller {
 	public function delete_tes()
 	{
 		$id=$this->input->post('id', TRUE);
-		$q=$this->model_admin->hapus_tes($id);
+		$q=$this->Model_admin->hapus_tes($id);
 		if ($q) {
 			$msg['pesan']='<div class="alert alert-success" role="alert">Agenda Jadwal berhasil  di Di Hapus</div>';
 			$msg['success'] = true;

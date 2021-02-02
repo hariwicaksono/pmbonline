@@ -25,13 +25,13 @@ class Home extends CI_Controller {
         $data['site_instagram'] = $site_info->site_instagram;
         $data['site_theme'] = $site_info->site_theme;
         $data['site_google_maps'] = $site_info->site_google_maps;
-        $kode_thak=$this->model_app->kode_thak_aktif();
-        $data['informasi']=$this->model_app->get_all_info($kode_thak);
-        $data['thak']=$this->model_admin->ambil_thak_aktif();
-        $data['prodi']=$this->model_app->get_prodi();
-        $data['prodi1']=$this->model_app->get_prodi();
-        $data['cek_reg']=$this->model_cek->cek_reg();
-        $data['jadwal_tes']=$this->model_admin->get_all_tes($kode_thak);
+        $kode_thak=$this->Model_app->kode_thak_aktif();
+        $data['informasi']=$this->Model_app->get_all_info($kode_thak);
+        $data['thak']=$this->Model_admin->ambil_thak_aktif();
+        $data['prodi']=$this->Model_app->get_prodi();
+        $data['prodi1']=$this->Model_app->get_prodi();
+        $data['cek_reg']=$this->Model_cek->cek_reg();
+        $data['jadwal_tes']=$this->Model_admin->get_all_tes($kode_thak);
         $data['header'] = $this->load->view('header',$data, true);
         $data['footer'] = $this->load->view('footer',$data, true);
         $data['navbar'] = $this->load->view('navbar',$data, true);
@@ -50,7 +50,7 @@ class Home extends CI_Controller {
 
 	public function daftar()
 	{
-                $kode_thak=$this->model_app->kode_thak_aktif();
+                $kode_thak=$this->Model_app->kode_thak_aktif();
                 $nisn=$this->input->post('nisn', TRUE);
                 $cek=$this->cek_nisn($nisn);
                 if ($cek) {
@@ -109,7 +109,7 @@ class Home extends CI_Controller {
                                     'daftar_tgl'=>$t,
                                     'foto'=>$poto
                                     );
-                                $result=$this->model_app->register_siswa($data);
+                                $result=$this->Model_app->register_siswa($data);
                                 if ($result) {
                                        $this->session->set_flashdata('error_daftar', '<div class="alert alert-success  wow zoomInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
                                            <strong><i class="icon fa fa-check-square-o"></i> Selamat!, Pendaftaran Berhasil.</strong>
@@ -135,7 +135,7 @@ class Home extends CI_Controller {
 
     private function cek_nisn($nisn)
     {
-            $cek=$this->model_cek->cek_nisn($nisn);
+            $cek=$this->Model_cek->cek_nisn($nisn);
             if ($cek) {
                     return true;
             }else{
@@ -148,9 +148,9 @@ class Home extends CI_Controller {
         $this->load->library('pdfgenerator');
         $site_info = $this->db->get('pengaturan', 1)->row();
         $this->data['row'] = $site_info;
-        $kode_thak=$this->model_app->kode_thak_aktif();
-        $this->data['data']=$this->model_app->cetak_form($id);
-        $this->data['jadwal']=$this->model_admin->get_all_tes($kode_thak);
+        $kode_thak=$this->Model_app->kode_thak_aktif();
+        $this->data['data']=$this->Model_app->cetak_form($id);
+        $this->data['jadwal']=$this->Model_admin->get_all_tes($kode_thak);
    
         $pdfFilePath ="registrasi-".time()."-download.pdf";
         $paper = 'A4';
@@ -164,12 +164,12 @@ class Home extends CI_Controller {
 
     public function pengumuman_maba($kode)
     {
-        $thak=$this->model_app->kode_thak_aktif();
-        $limit=$this->model_app->get_limit($kode);
+        $thak=$this->Model_app->kode_thak_aktif();
+        $limit=$this->Model_app->get_limit($kode);
         $array = array('pendaftaran.thak' => $thak, 'pendaftaran.prodi' => $kode);
-        $d['det']=$this->model_app->detail_lulus_prodi($kode);
-        $d['thak']=$this->model_admin->ambil_thak_aktif();
-        $d['maba']=$this->model_app->siswa_lulus($array,$limit);
+        $d['det']=$this->Model_app->detail_lulus_prodi($kode);
+        $d['thak']=$this->Model_admin->ambil_thak_aktif();
+        $d['maba']=$this->Model_app->siswa_lulus($array,$limit);
         $this->load->view('pengumuman',$d);
     }
 

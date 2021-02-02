@@ -23,8 +23,8 @@ class Pendaftaran extends CI_Controller {
 
 	public function show_pendaftaran()
 	{
-		$kode_thak=$this->model_app->kode_thak_aktif();
-		$q=$this->model_admin->get_all_siswa($kode_thak);
+		$kode_thak=$this->Model_admin->kode_thak_aktif();
+		$q=$this->Model_admin->get_all_siswa($kode_thak);
 		$html='';
 		$no=1;
 		if ($q) {
@@ -58,7 +58,7 @@ class Pendaftaran extends CI_Controller {
 
 	public function detail($id)
 	{
-		$result=$this->model_admin->get_detail_siswa($id);
+		$result=$this->Model_admin->get_detail_siswa($id);
 		if ($result) {
 			echo json_encode($result);
 		}else{
@@ -69,7 +69,7 @@ class Pendaftaran extends CI_Controller {
 	public function delete_siswa()
 	{
 		$id=$this->input->post('id', TRUE);
-		$query=$this->model_admin->del_siswa($id);
+		$query=$this->Model_admin->del_siswa($id);
 		if ($query) {
 			$msg['success'] = true;
 			$msg['pesan'] = '<div class="alert alert-success" role="alert">Siswa berhasil  di Hapus</div>';	
@@ -79,7 +79,7 @@ class Pendaftaran extends CI_Controller {
 
 	public function get_det_tes($id)
 	{
-		$result=$this->model_admin->get_data_tes($id);
+		$result=$this->Model_admin->get_data_tes($id);
 		if ($result) {
 			echo json_encode($result);
 		}
@@ -94,7 +94,7 @@ class Pendaftaran extends CI_Controller {
 			'input_tes_tgl'=>$t
 			);
 		$id=$this->input->post('key', TRUE);
-		$result=$this->model_admin->input_tes($id,$data);
+		$result=$this->Model_admin->input_tes($id,$data);
 		if ($result) {
 			$msg['success'] = true;
 			$msg['pesan'] = '<div class="alert alert-success" role="alert">Nilai Berhasil Di masukan</div>';	
@@ -109,7 +109,7 @@ class Pendaftaran extends CI_Controller {
 		$data=array(
 			'nilai_tes'=>$nilai
 			);
-		$result=$this->model_admin->input_tes($id,$data);
+		$result=$this->Model_admin->input_tes($id,$data);
 		if ($result) {
 			$msg['success'] = true;
 			$msg['pesan'] = '<div class="alert alert-success" role="alert">Nilai Berhasil Di Update</div>';	
