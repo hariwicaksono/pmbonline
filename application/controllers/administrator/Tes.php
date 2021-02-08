@@ -23,7 +23,7 @@ class Tes extends CI_Controller {
 
 	public function add_tes()
 	{
-		$kode_thak=$this->Model_admin->kode_thak_aktif();
+		$kode_thak=$this->Model_app->kode_thak_aktif();
 		$tes=strtoupper($this->input->post('tes', TRUE));
 		$tgl=$this->input->post('tgl_tes', TRUE);
 		$mulai=$this->input->post('mulai', TRUE);
@@ -48,7 +48,7 @@ class Tes extends CI_Controller {
 
 	public function show_tes()
 	{
-		$kode_thak=$this->Model_admin->kode_thak_aktif();
+		$kode_thak=$this->Model_app->kode_thak_aktif();
 		$q=$this->Model_admin->get_all_tes($kode_thak);
 		$html='';
 		$no=1;

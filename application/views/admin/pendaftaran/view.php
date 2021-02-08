@@ -116,7 +116,7 @@
                           <div class="form-group">
                             <label for="inputEmail3" class="col-xs-3 control-label">NISN</label>
                             <div class="col-xs-9">
-                              <input type="email" class="form-control" id="nisn" placeholder="NISN" readonly>
+                              <input type="text" class="form-control" id="nisn" placeholder="NISN" readonly>
                             </div>
                           </div>
                         </div>
@@ -124,7 +124,7 @@
                           <div class="form-group">
                             <label for="inputEmail3" class="col-xs-3 control-label">Nama</label>
                             <div class="col-xs-9">
-                              <input type="email" class="form-control" id="nama" placeholder="Nama" readonly>
+                              <input type="text" class="form-control" id="nama" placeholder="Nama" readonly>
                             </div>
                           </div>
                         </div>
@@ -132,7 +132,7 @@
                           <div class="form-group">
                             <label for="inputEmail3" class="col-xs-3 control-label">NIK KTP</label>
                             <div class="col-xs-9">
-                              <input type="email" class="form-control" id="nikktp" placeholder="No.NIK/KTP" readonly>
+                              <input type="text" class="form-control" id="nikktp" placeholder="No.NIK/KTP" readonly>
                             </div>
                           </div>
                         </div>
@@ -140,11 +140,11 @@
                           <div class="form-group">
                             <label for="inputEmail3" class="col-xs-3 control-label">Tgl Lahir</label>
                             <div class="col-xs-4">
-                              <input type="email" class="form-control" id="tgl" placeholder="Tgl Lahir" readonly>
+                              <input type="text" class="form-control" id="tgl" placeholder="Tgl Lahir" readonly>
                             </div>
                              <label for="inputEmail3" class="col-xs-2 control-label">Agama</label>
                             <div class="col-xs-3">
-                              <input type="email" class="form-control" id="agama" placeholder="Agama" readonly>
+                              <input type="text" class="form-control" id="agama" placeholder="Agama" readonly>
                             </div>
                           </div>
                         </div>
@@ -160,7 +160,7 @@
                           <div class="form-group">
                             <label for="inputEmail3" class="col-xs-3 control-label">Telp/Hp</label>
                             <div class="col-xs-9">
-                              <input type="email" class="form-control" id="hp" placeholder="Alamat" readonly>
+                              <input type="text" class="form-control" id="hp" placeholder="Alamat" readonly>
                             </div>
                           </div>
                         </div>
@@ -168,7 +168,7 @@
                           <div class="form-group">
                             <label for="inputEmail3" class="col-xs-3 control-label">Email</label>
                             <div class="col-xs-9">
-                              <input type="email" class="form-control" id="email" placeholder="Email" readonly>
+                              <input type="text" class="form-control" id="email" placeholder="Email" readonly>
                             </div>
                           </div>
                         </div>
@@ -176,7 +176,7 @@
                           <div class="form-group">
                             <label for="inputEmail3" class="col-xs-3 control-label">Asal Sekolah</label>
                             <div class="col-xs-9">
-                              <input type="email" class="form-control" id="sekolah" placeholder="Sekolah" readonly>
+                              <input type="text" class="form-control" id="sekolah" placeholder="Sekolah" readonly>
                             </div>
                           </div>
                         </div>
@@ -184,7 +184,7 @@
                           <div class="form-group">
                             <label for="inputEmail3" class="col-xs-3 control-label">Nilai UN</label>
                             <div class="col-xs-9">
-                              <input type="email" class="form-control" id="un" placeholder="Nilai UN" readonly>
+                              <input type="text" class="form-control" id="un" placeholder="Nilai UN" readonly>
                             </div>
                           </div>
                         </div>
@@ -192,7 +192,15 @@
                           <div class="form-group">
                             <label for="inputEmail3" class="col-xs-3 control-label">Prodi</label>
                             <div class="col-xs-9">
-                              <input type="email" class="form-control" id="prodi" placeholder="Prodi Pilihan" readonly>
+                              <input type="text" class="form-control" id="prodi" placeholder="Prodi Pilihan" readonly>
+                            </div>
+                          </div>
+                        </div> 
+                        <div class="row">
+                          <div class="form-group">
+                            <label for="inputEmail3" class="col-xs-3 control-label">Nama Ibu Kandung</label>
+                            <div class="col-xs-9">
+                              <input type="text" class="form-control" id="namaibu" placeholder="Ibu Kandung" readonly>
                             </div>
                           </div>
                         </div> 
@@ -231,12 +239,14 @@
           type: 'GET',
           url: '<?php echo base_url() ?>administrator/pendaftaran/show_pendaftaran',
           success: function(data){
-             //console.log(data);
+             console.log(data);
              $('#showdata').html(data);
              $('#tabel_daftar').DataTable({
+              destroy: true,
                dom: 'lBfrtip',
                buttons: ['copyHtml5','excelHtml5','csvHtml5','pdfHtml5']
              });
+             
           },
           error: function(){
             alert('Could not get Data from Database');
@@ -270,6 +280,7 @@
               $("#un").val(data.nilai_un);
               $("#prodi").val(data.nama_prodi);
               $("#jkel").text(jkel);
+              $("#namaibu").val(data.nama_ibu_kandung);
               $("#detail_modal").modal('show');
           }
         });

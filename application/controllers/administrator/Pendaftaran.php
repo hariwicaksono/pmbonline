@@ -23,7 +23,7 @@ class Pendaftaran extends CI_Controller {
 
 	public function show_pendaftaran()
 	{
-		$kode_thak=$this->Model_admin->kode_thak_aktif();
+		$kode_thak=$this->Model_app->kode_thak_aktif();
 		$q=$this->Model_admin->get_all_siswa($kode_thak);
 		$html='';
 		$no=1;
