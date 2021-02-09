@@ -33,7 +33,7 @@
 					if ($data->verifikasi_tgl==0) {
 						$tes='<a href="'.base_url('administrator/verifikasi/do_verifikasi/'.$data->id_daftar.'').'" class="btn btn-danger btn-sm" title="Lakukan Verifikasi"><i class="fa fa-exclamation-triangle"></i> Belum Verifikasi</a>';
 					}else{
-						$tes='<a href="'.base_url('administrator/verifikasi/do_verifikasi/'.$data->id_daftar.'').'" class="btn btn-primary btn-sm" title="Edit Verifikasi"><i class="fa fa-check-square-o"></i> Sudah Verifikasi</a>
+						$tes='<a href="'.base_url('administrator/verifikasi/do_verifikasi/'.$data->id_daftar.'').'" class="btn btn-success btn-sm" title="Edit Verifikasi"><i class="fa fa-check-square-o"></i> Sudah Verifikasi</a>
 							<a href="'.base_url('administrator/verifikasi/cetak_verifikasi/'.$data->id_daftar.'').'" class="btn bg-maroon btn-sm" title="Cetak Kartu Ujian" target="_blank"><i class="fa fa-print"></i> Cetak Kartu Ujian</a>';
 					}
 
@@ -55,6 +55,7 @@
 							<td>'.$data->nisn.'</td>
 							<td>'.$data->sekolah.'</td>
 							<td>'.$data->jenjang.' '.$data->nama_prodi.'</td>
+							<td>'.$data->nilai_tes.'</td>
 							<td>'.$fc_ijazah.'</td>
 							<td>'.$fc_skhu.'</td>
 							<td>'.$tes.'</td>

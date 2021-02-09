@@ -40,9 +40,10 @@
                       <th>Nisn</th>
                       <th>Sekolah</th>
                       <th>Prodi</th>
+                      <th>Nilai Tes</th>
                       <th>FC Ijazah</th>
                       <th>FC Skhu</th>
-                      <th></th>
+                      <th width="10%"></th>
                     </tr>
                   </thead>
                   <tbody id="showdata">

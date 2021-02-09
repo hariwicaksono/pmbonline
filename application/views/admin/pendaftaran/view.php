@@ -39,7 +39,7 @@
                       <th>NIK/KTP</th>
                       <th>NISN</th>
                       <th>Sekolah</th>
-                      <th>Prodi</th>
+                      <th>Prodi Pilihan</th>
                       <th></th>
                       <th></th>
                     </tr>
